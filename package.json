@@ -3,6 +3,12 @@
   "displayName": "pintora-vscode",
   "description": "Language support for pintora.js",
   "version": "0.0.1",
+  "publisher": "hikerpig",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hikerpig/pintora-vscode"
+  },
   "engines": {
     "vscode": "^1.59.0"
   },
