@@ -1,0 +1,25 @@
+{
+    "name": "pintora-vscode",
+    "displayName": "pintora-vscode",
+    "description": "Language support for pintora.js",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.59.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "pintora",
+            "aliases": ["pintora", "pintora"],
+            "extensions": [".pintora"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "pintora",
+            "scopeName": "source.pintora",
+            "path": "./syntaxes/pintora.tmLanguage.json"
+        }]
+    }
+}
