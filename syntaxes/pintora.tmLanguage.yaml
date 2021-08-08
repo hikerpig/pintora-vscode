@@ -1,0 +1,17 @@
+---
+fileTypes: []
+injectionSelector: L:markup.fenced_code.block.markdown
+patterns:
+  - include: '#pintora-code-block'
+  - include: '#pintora'
+repository:
+  pintora-code-block:
+    begin: (?<=[`~])pintora(\s+[^`~]*)?$
+    end: (^|\G)(?=\s*[`~]{3,}\s*$)
+    patterns:
+      - include: '#pintora'
+  pintora:
+    patterns: !!import/deep
+      - diagrams/
+
+scopeName: source.pintora

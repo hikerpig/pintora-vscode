@@ -1,25 +1,53 @@
 {
-    "name": "pintora-vscode",
-    "displayName": "pintora-vscode",
-    "description": "Language support for pintora.js",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.59.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "pintora-vscode",
+  "displayName": "pintora-vscode",
+  "description": "Language support for pintora.js",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.59.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "pintora",
+        "aliases": [
+          "pintora",
+          "pintora"
+        ],
+        "extensions": [
+          ".pintora"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "contributes": {
-        "languages": [{
-            "id": "pintora",
-            "aliases": ["pintora", "pintora"],
-            "extensions": [".pintora"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "pintora",
-            "scopeName": "source.pintora",
-            "path": "./syntaxes/pintora.tmLanguage.json"
-        }]
-    }
+    "grammars": [
+      {
+        "language": "pintora",
+        "scopeName": "source.pintora",
+        "path": "./out/pintora.tmLanguage.json"
+      },
+      {
+        "scopeName": "source.pintora",
+        "path": "./out/pintora.tmLanguage.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.pintora": "pintora"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "build": "npm run convert-yaml",
+    "vscode:prepublish": "npm run convert-yaml",
+    "convert-yaml": "node scripts/convert-yaml.js"
+  },
+  "devDependencies": {
+    "fs-extra": "^10.0.0",
+    "yaml-import": "^2.0.0"
+  }
 }
