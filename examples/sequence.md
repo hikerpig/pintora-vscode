@@ -1,0 +1,19 @@
+```pintora
+sequenceDiagram
+  autonumber
+  User->>+Pintora: render this
+  activate Pintora
+  loop Check input
+    Pintora-->>Pintora: Has input changed?
+  end
+  Pintora-->>User: your figure here
+  deactivate Pintora
+  @note over User,Pintora: note over
+  @note right of User: note aside actor
+  @note right of User
+  multiline note
+  is possible
+  @end_note
+  Note over User,Pintora: note over
+  == Divider ==
+```
