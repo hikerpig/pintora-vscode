@@ -47,6 +47,7 @@
       }
     ]
   },
+  "icon": "./icon.png",
   "scripts": {
     "build": "npm run convert-yaml",
     "vscode:prepublish": "npm run convert-yaml",
