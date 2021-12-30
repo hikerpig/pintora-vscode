@@ -10,7 +10,7 @@
       "type": "extensionHost",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "args": ["--extensionDevelopmentPath=${workspaceFolder}", "${workspaceFolder}"],
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}", "${workspaceFolder}/examples"],
       "preLaunchTask": "npm: convert-yaml"
     }
   ]
