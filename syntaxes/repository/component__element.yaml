@@ -1,0 +1,110 @@
+patterns:
+  - comment: 'package'
+    begin: !regex |-
+      (package|node|folder|frame|cloud|database|rectangle|component)\s+"([^"]+)"
+      \s*({)
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: string
+      '3':
+        name: punctuation.bracket.open.pintora
+    end: '(})'
+    endCaptures:
+      '1':
+        name: punctuation.bracket.close.pintora
+    patterns:
+      - include: '#component__element'
+
+  - comment: '() "label" as aliasname'
+    match: !regex |-
+      (\(\))\s*"([^"]+)"\s*(as)\s+(\w+)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: string
+      '3':
+        name: keyword.control.pintora
+      '4':
+        name: variable.pintora
+
+  - comment: '() interface'
+    match: !regex |-
+      (\(\))
+      \s*(\w+)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: variable.pintora
+
+  - comment: '[component] --> aliasname : message'
+    match: !regex |-
+      (\[)
+      (.*)
+      (\])
+      \s*([-><.]+) # relationline
+      \s*([^\s]*)
+      \s*(:)\s*
+      (.*) # message
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: variable.pintora
+      '3':
+        name: keyword.control.pintora
+      '4': # relationline
+        name: keyword.control.pintora
+      '5':
+        name: variable.pintora
+      '6':
+        name: keyword.control.pintora
+      '7':
+        name: string.pintora
+  - comment: 'name --> aliasname : message'
+    match: !regex |-
+      ([^\s]+)
+      \s*([-><.]+) # relationline
+      \s*([^\s]*)
+      \s*(:)\s*
+      (.*) # message
+    captures:
+      '1':
+        name: variable.pintora
+      '2': # relationline
+        name: keyword.control.pintora
+      '3':
+        name: variable.pintora
+      '4':
+        name: keyword.control.pintora
+      '5':
+        name: string.pintora
+  - comment: '[component] as aliasname'
+    match: !regex |-
+      (\[)(.*)(\])\s+(as)\s+(\w+)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: variable.pintora
+      '3':
+        name: keyword.control.pintora
+      '4':
+        name: keyword.control.pintora
+      '5':
+        name: variable.pintora
+  - comment: '[component]'
+    match: !regex |-
+      (\[)
+      (.*)
+      (\])
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: variable.pintora
+      '3':
+        name: keyword.control.pintora

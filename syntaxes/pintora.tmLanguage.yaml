@@ -13,5 +13,5 @@ repository:
   pintora:
     patterns: !!import/deep
       - diagrams/
-
+  'component__element': !!import/single repository/component__element.yaml
 scopeName: source.pintora

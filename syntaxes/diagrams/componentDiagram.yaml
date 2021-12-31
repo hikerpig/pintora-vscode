@@ -1,0 +1,10 @@
+- comment: Component Diagram
+  begin: \b(componentDiagram)
+  beginCaptures:
+    '1':
+      name: keyword.control.pintora
+
+  patterns:
+    - include: '#component__element'
+
+  end: (^|\G)(?=\s*[`~]{3,}\s*$)

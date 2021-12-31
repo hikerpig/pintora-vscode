@@ -7,6 +7,6 @@ VSCode extention for [pintora](https://github.com/hikerpig/pintora). Providing b
 - [x] sequenceDiagram
 - [x] erDiagram
 - [ ] activityDiagram
-- [ ] componentDiagram
+- [x] componentDiagram
 
 Inspired by [vscode-mermaid-syntax-highlight](https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight)
