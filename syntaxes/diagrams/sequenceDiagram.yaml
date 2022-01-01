@@ -85,8 +85,6 @@
           name: keyword.control.pintora
         '5':
           name: variable
-        '6':
-          name: keyword.control.pintora
       endCaptures:
         '1':
           name: keyword.control.pintora

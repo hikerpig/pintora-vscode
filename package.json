@@ -15,6 +15,11 @@
   "categories": [
     "Programming Languages"
   ],
+  "keywords": [
+    "pintora",
+    "uml",
+    "diagram"
+  ],
   "contributes": {
     "languages": [
       {
