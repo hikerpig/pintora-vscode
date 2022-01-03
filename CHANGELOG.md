@@ -11,15 +11,3 @@ All notable changes to this project will be documented in this file. See [standa
 * add markdown preview support for `pintora` code block ([0b71ab5](https://github.com/hikerpig/pintora-vscode/commit/0b71ab58ece2fd932240c5e2a132e6aef477930f))
 * add syntax highlight for componentDiagram ([15885c9](https://github.com/hikerpig/pintora-vscode/commit/15885c9c4670be832e2a9a47ea30016f6518fa84))
 * add syntax highlight for erDiagram ([12cd2b2](https://github.com/hikerpig/pintora-vscode/commit/12cd2b2bc9c3a773207e7fba959c81f779808ed8))
-
-
-
-# Change Log
-
-All notable changes to the "pintora-vscode" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
