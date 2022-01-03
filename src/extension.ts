@@ -34,7 +34,7 @@ export function activate(context: vscode.ExtensionContext) {
           <link rel="stylesheet" href="${cssUrl}">
         </head>
         <body>
-          <div id="preview"></div>
+          <div id="preview" class="preview"></div>
           
           <script src="${jsUrl}"></script>
         </body>

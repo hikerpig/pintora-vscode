@@ -1,3 +1,17 @@
 body {
   background-color: whitesmoke;
 }
+
+.error {
+  color: var(--vscode-errorForeground);
+}
+
+.preview svg,
+.preview canvas {
+  background-color: white;
+}
+
+.preview svg:hover,
+.preview canvas:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

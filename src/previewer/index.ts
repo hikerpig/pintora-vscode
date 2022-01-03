@@ -22,7 +22,12 @@ function doPreview(text: string) {
   container.innerHTML = ''
 
   pintoraStandalone.renderTo(text, {
-    container
+    container,
+    renderer: 'svg',
+    onError(error) {
+      console.error(error)
+      container.innerHTML = `<pre class="error">${error.message}</pre>`
+    }
   })
 }
 
