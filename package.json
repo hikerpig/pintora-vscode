@@ -60,7 +60,49 @@
     "markdown.previewScripts": [
       "./out/markdown-script.js"
     ],
-    "markdown.markdownItPlugins": true
+    "markdown.markdownItPlugins": true,
+    "configuration": {
+      "type": "object",
+      "title": "Pintora Extension configuration",
+      "properties": {
+        "pintora.vscode.dark": {
+          "type": "string",
+          "enum": [
+            "dark",
+            "default",
+            "larkLight",
+            "larkDark"
+          ],
+          "default": "dark",
+          "description": "Default pintora theme used for dark theme"
+        },
+        "pintora.vscode.light": {
+          "type": "string",
+          "enum": [
+            "dark",
+            "default",
+            "larkLight",
+            "larkDark"
+          ],
+          "default": "default",
+          "description": "Default pintora theme used for light theme"
+        },
+        "pintora.theme": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One of the themes bundled with pintora"
+        },
+        "pintora.options": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Options for pintora.setOptions as JSON string"
+        }
+      }
+    }
   },
   "main": "out/extension.js",
   "activationEvents": [

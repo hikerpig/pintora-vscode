@@ -34,4 +34,5 @@ You can see pintora diagram in markdown preview by annotating `pintora` for the 
 
 Inspired by:
 - [vscode-mermaid-syntax-highlight](https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight) for the syntax highlight.
+- [vstirbu/vscode-mermaid-preview](https://github.com/vstirbu/vscode-mermaid-preview) for preview command and configurations.
 - [vscode-markdown-mermaid](https://github.com/mjbvz/vscode-markdown-mermaid) for the markdown preview enhancing.
