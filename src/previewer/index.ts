@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { WebviewSendMessage } from '../type'
+import { WebviewSendMessage, ExtensionConfig } from '../type'
 import { pintoraStandalone } from '@pintora/standalone'
 import { getTheme } from '../util/webview-shared'
 import './index.css'
@@ -16,6 +16,8 @@ const messageHelper = (function () {
     },
   }
 })()
+
+const config: ExtensionConfig = (window as any)._config
 
 function doPreview(text: string) {
   const container = document.getElementById('preview')
@@ -49,6 +51,6 @@ messageHelper.postMessage({
 
 pintoraStandalone.setConfig({
   themeConfig: {
-    theme: getTheme(),
+    theme: getTheme(config),
   },
 })

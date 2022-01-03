@@ -8,3 +8,15 @@ export type WebviewSendMessage = {
     text: string
   }
 }
+
+/**
+ * Configuration throught vscode
+ */
+export type ExtensionConfig = {
+  vscode: {
+    dark: string
+    light: string
+  }
+  theme: string
+  // options: string
+}

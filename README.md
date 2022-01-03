@@ -24,14 +24,35 @@ When editing a `.pintora` file, you can call `pintora:Preview Pintora Diagram` t
 
 You can see pintora diagram in markdown preview by annotating `pintora` for the code fence.
 
-    ```pintora
-    ...write some pintora dsl
-    ```
+~~~markdown
+```pintora
+...write some pintora dsl
+```
+~~~
 
 ![markdown preview](https://i.imgur.com/kyQEexU.png)
+
+## Configuaration
+
+### Theme
+
+Based on the theme used in Visual Studio Code, the default themes are *default* for light and *dark* for dark. These values can be changed by setting `pintora.vscode.*` config.
+
+Or you can overricde automatic theme detection by setting `pintora.theme`.
+
+```json
+{
+  "pintora.vscode.light": "one of pintora's builtin default",
+  "pintora.vscode.dark": "one of pintora's builtin default",
+
+  // override automatic theme detection
+  "pintora.theme": "one of pintora's builtin default"
+}
+```
 
 ## Credits
 
 Inspired by:
 - [vscode-mermaid-syntax-highlight](https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight) for the syntax highlight.
+- [vstirbu/vscode-mermaid-preview](https://github.com/vstirbu/vscode-mermaid-preview) for preview command and configurations.
 - [vscode-markdown-mermaid](https://github.com/mjbvz/vscode-markdown-mermaid) for the markdown preview enhancing.

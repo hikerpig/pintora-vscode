@@ -1,17 +1,26 @@
+/**
+ * This script runs in VSCode markdown builtin preview webview
+ */
 import { pintoraStandalone } from '@pintora/standalone'
-import { getTheme } from './util/webview-shared'
+
+let hasThemeBeSet = false
 
 function init() {
-  pintoraStandalone.setConfig({
-    themeConfig: {
-      theme: getTheme(),
-    },
-  })
-
+  hasThemeBeSet = false
   let i = 0
-  document.querySelectorAll('.pintora').forEach((container) => {
+  document.querySelectorAll('.pintora').forEach((container: HTMLDivElement) => {
     const id = `pintora-${Date.now()}-${i++}`
     const source = container.textContent
+
+    const containerTheme = container.dataset.theme
+    if (containerTheme && !hasThemeBeSet) {
+      pintoraStandalone.setConfig({
+        themeConfig: {
+          theme: containerTheme,
+        },
+      })
+      hasThemeBeSet = true
+    }
 
     const out = document.createElement('div')
     out.id = id
@@ -23,7 +32,7 @@ function init() {
       onError(error) {
         console.error(error)
         out.innerHTML = `<pre style="color: var(--vscode-errorForeground)">${error.message}</pre>`
-      }
+      },
     })
   })
 }

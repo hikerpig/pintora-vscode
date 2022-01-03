@@ -20,6 +20,8 @@ export function activate(context: vscode.ExtensionContext) {
         }
       )
       const getWebviewContent = () => {
+        const config = vscode.workspace.getConfiguration('pintora')
+
         const jsUrl = panel.webview.asWebviewUri(
           vscode.Uri.file(context.asAbsolutePath('out/previewer/index.js'))
         )
@@ -33,10 +35,13 @@ export function activate(context: vscode.ExtensionContext) {
           <title>Preview Pintora</title>
           <meta charset="utf-8" />
           <link rel="stylesheet" href="${cssUrl}">
+          <script>
+            window._config = JSON.parse('${JSON.stringify(config)}');
+          </script>
         </head>
         <body>
           <div id="preview" class="preview"></div>
-          
+
           <script src="${jsUrl}"></script>
         </body>
       </html>
@@ -110,7 +115,21 @@ export function activate(context: vscode.ExtensionContext) {
 
   return {
     extendMarkdownIt(md: any) {
-      return md.use(MarkdownItPintora)
+      return md.use(MarkdownItPintora, {
+        getTheme() {
+          const extensionConfig = vscode.workspace.getConfiguration('pintora')
+          const colorKind = vscode.window.activeColorTheme.kind
+          const isDark =
+            colorKind === vscode.ColorThemeKind.Dark ||
+            colorKind === vscode.ColorThemeKind.HighContrast
+          return (
+            extensionConfig.get('theme') ||
+            (isDark
+              ? extensionConfig.get('vscode.dark')
+              : extensionConfig.get('vscode.light'))
+          )
+        },
+      })
     },
   }
 }

@@ -1,7 +1,11 @@
 import mdItContainer from 'markdown-it-container'
 import * as MarkdownIt from 'markdown-it'
 
-export const MarkdownItPintora = (md: MarkdownIt, options) => {
+type Options = {
+  getTheme?: () => string
+}
+
+export const MarkdownItPintora = (md: MarkdownIt, options: Options = {}) => {
   const pluginKeyword = 'pintora'
   const tokenTypeInline = 'inline'
   const ttContainerOpen = 'container_' + pluginKeyword + '_open'
@@ -16,6 +20,7 @@ export const MarkdownItPintora = (md: MarkdownIt, options) => {
 
     render: (tokens, idx) => {
       const token = tokens[idx]
+      const theme = options.getTheme()
 
       var src = ''
       if (token.type === ttContainerOpen) {
@@ -37,7 +42,9 @@ export const MarkdownItPintora = (md: MarkdownIt, options) => {
       }
 
       if (token.nesting === 1) {
-        return `<div class="${pluginKeyword}">${preProcess(src)}`
+        return `<div class="${pluginKeyword}" data-theme="${theme}">${preProcess(
+          src
+        )}`
       } else {
         return '</div>'
       }
@@ -47,7 +54,8 @@ export const MarkdownItPintora = (md: MarkdownIt, options) => {
   const highlight = md.options.highlight
   md.options.highlight = (code, lang) => {
     if (lang && lang.match(/\bpintora\b/i)) {
-      return `<pre style="all:unset;"><div class="${pluginKeyword}">${preProcess(
+      const theme = options.getTheme()
+      return `<pre style="all:unset;"><div class="${pluginKeyword}" data-theme="${theme}">${preProcess(
         code
       )}</div></pre>`
     }
