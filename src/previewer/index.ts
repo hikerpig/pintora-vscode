@@ -1,19 +1,19 @@
 import * as vscode from 'vscode'
 import { WebviewSendMessage } from '../type'
 import { pintoraStandalone } from '@pintora/standalone'
+import { getTheme } from '../util/webview-shared'
 import './index.css'
 
-const messageHelper = (function() {
+const messageHelper = (function () {
   let vscodeInterface: vscode.Webview
   try {
     vscodeInterface = (window as any).acquireVsCodeApi()
-  } catch (error) {
-  }
+  } catch (error) {}
 
   return {
     postMessage(message) {
       vscodeInterface?.postMessage(message)
-    }
+    },
   }
 })()
 
@@ -27,7 +27,7 @@ function doPreview(text: string) {
     onError(error) {
       console.error(error)
       container.innerHTML = `<pre class="error">${error.message}</pre>`
-    }
+    },
   })
 }
 
@@ -45,4 +45,10 @@ window.addEventListener('message', (event) => {
 
 messageHelper.postMessage({
   command: 'init',
+})
+
+pintoraStandalone.setConfig({
+  themeConfig: {
+    theme: getTheme(),
+  },
 })

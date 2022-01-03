@@ -8,7 +8,7 @@ export default [
     input: './src/extension.ts',
     output: {
       file: './out/extension.js',
-      format: 'cjs',
+      format: 'commonjs',
       sourcemap: true,
     },
     external: ['vscode'],
@@ -24,10 +24,20 @@ export default [
     external: ['vscode'],
     plugins: [
       nodeResolve(),
-      typescript({ lib: ['es5', 'es6', 'dom'], target: 'es6', module: 'es6' }),
+      typescript(),
       css({
         output: 'bundled.css'
       }),
     ],
+  },
+  {
+    input: './src/markdown-script.ts',
+    output: {
+      file: './out/markdown-script.js',
+      format: 'umd',
+      sourcemap: true,
+    },
+    external: ['vscode'],
+    plugins: [nodeResolve(), commonjs(), typescript()],
   },
 ]

@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "baseUrl": "./src",
     "outDir": "./out",
-    "sourceMap": true
+    "sourceMap": true,
+    "lib": ["DOM", "ES5", "ES6"]
   },
   "include": ["./src"]
 }
