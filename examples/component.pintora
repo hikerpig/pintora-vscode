@@ -18,6 +18,7 @@ componentDiagram
     [CanvasRender] --> IRenderer : implements
     IRenderer ..> GraphicsIR : accepts
   }
+
   package "@pintora/standalone" {
     [standalone]
   }

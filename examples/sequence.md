@@ -14,6 +14,6 @@ sequenceDiagram
   multiline note
   is possible
   @end_note
-  Note over User,Pintora: note over
+  note over User,Pintora: note over
   == Divider ==
 ```

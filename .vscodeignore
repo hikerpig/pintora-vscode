@@ -5,3 +5,7 @@ vsc-extension-quickstart.md
 
 examples/*
 scripts/*
+
+node_modules/
+src/
+*.map

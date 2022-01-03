@@ -41,9 +41,9 @@
           name: keyword.control.pintora
         '2':
           name: variable
-    - comment: '(Note)(direction)(Actor)(,)?(Actor)?(:)(Message)'
+    - comment: '(note)(direction)(Actor)(,)?(Actor)?(:)(Message)'
       match: !regex |-
-        \s*(Note|@note) # Note
+        \s*(note|@note) # Note
         \s+((?:left|right)\sof|over) # Direction
         \s+(\b["\(\)$&%\^/#.?!*=<>\'\\\w\s]+\b\s*) # Actor
         (,)? # ,?
