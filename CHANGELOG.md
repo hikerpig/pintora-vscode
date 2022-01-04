@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/hikerpig/pintora-vscode/compare/v0.1.0...v0.2.0) (2022-01-04)
+
+
+### Features
+
+* add theme config through vscode configuration ([01672a4](https://github.com/hikerpig/pintora-vscode/commit/01672a4266d972d0f669b75505c8ddd9fe0b9437))
+
 # 0.1.0 (2022-01-03)
 
 

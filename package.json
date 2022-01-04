@@ -2,7 +2,7 @@
   "name": "pintora-vscode",
   "displayName": "pintora-vscode",
   "description": "Language support for pintora.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "hikerpig",
   "license": "MIT",
   "repository": {
