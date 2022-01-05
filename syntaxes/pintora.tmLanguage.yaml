@@ -14,4 +14,5 @@ repository:
     patterns: !!import/deep
       - diagrams/
   'component__element': !!import/single repository/component__element.yaml
+  'activity__element': !!import/single repository/activity__element.yaml
 scopeName: source.pintora

@@ -8,7 +8,7 @@ A humble helper for managing your diagrams as text.
 
 - [x] sequenceDiagram
 - [x] erDiagram
-- [ ] activityDiagram
+- [x] activityDiagram
 - [x] componentDiagram
 
 ## Commands

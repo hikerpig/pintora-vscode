@@ -1,0 +1,222 @@
+patterns:
+  - comment: 'group'
+    begin: !regex |-
+      (group|partition)\s+([^\s]+)
+      \s*({)
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: string
+      '3':
+        name: punctuation.bracket.open.pintora
+    end: '(})'
+    endCaptures:
+      '1':
+        name: punctuation.bracket.close.pintora
+    patterns:
+      - include: '#activity__element'
+
+  - comment: 'condition - if'
+    begin: !regex |-
+      (if)\s+
+      (\()
+      (.*)
+      (\))\s+
+      (then)\s+
+      (\(.*\))?
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string
+      '4':
+        name: keyword.control.pintora
+      '5':
+        name: keyword.control.pintora
+      '6':
+        name: string
+    end: '(endif)'
+    endCaptures:
+      '1':
+        name: keyword.control.pintora
+    patterns:
+      - include: '#activity__element'
+
+  - comment: 'condition - else - with label'
+    match: !regex |-
+      (else)\s+
+      (\()
+      (.*)
+      (\))
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string
+      '4':
+        name: keyword.control.pintora
+
+  - comment: 'condition - else'
+    match: !regex |-
+      (else)
+    captures:
+      '1':
+        name: keyword.control.pintora
+
+  - comment: 'while'
+    begin: !regex |-
+      (while)\s+
+      (\()
+      ([^)]+)
+      (\))
+      (?: # start group
+      \s+(is)\s+
+      (\()
+      ([^)]+)
+      (\))
+      )?
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string
+      '4':
+        name: keyword.control.pintora
+      '5':
+        name: keyword.control.pintora
+      '6':
+        name: keyword.control.pintora
+      '7':
+        name: string
+      '8':
+        name: keyword.control.pintora
+    end: !regex |-
+      (endwhile)
+      (?:\s+(\()(.*)(\)))?
+    endCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string
+      '4':
+        name: keyword.control.pintora
+    patterns:
+      - include: '#activity__element'
+
+  - comment: 'switch'
+    begin: !regex |-
+      (switch)\s+
+      (\()
+      ([^)]+)
+      (\))
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string
+      '4':
+        name: keyword.control.pintora
+    end: !regex |-
+      (endswitch)
+    endCaptures:
+      '1':
+        name: keyword.control.pintora
+    patterns:
+      - include: '#activity__element'
+
+  - comment: 'case'
+    match: !regex |-
+      (case)\s+
+      (\()
+      ([^)]+)
+      (\))
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string
+      '4':
+        name: keyword.control.pintora
+    patterns:
+      - include: '#activity__element'
+
+  - comment: 'forkagain'
+    match: '(forkagain)'
+    captures:
+      '1':
+        name: keyword.control.pintora
+
+  - comment: 'fork'
+    begin: '(fork)'
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+    end: '(endfork|endmerge)'
+    endCaptures:
+      '1':
+        name: keyword.control.pintora
+    patterns:
+      - include: '#activity__element'
+
+  - comment: '(note)(direction)(Actor)(,)?(Actor)?(:)(Message)'
+    match: !regex |-
+      \s*(note) # Note
+      \s+(left|right) # Direction
+      \s*(:)\s*
+      (.*)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: entity.name.function.pintora
+      '3':
+        name: keyword.control.pintora
+      '4':
+        name: string
+
+  - comment: 'arrow label'
+    match: !regex |-
+      (->)
+      (.*)
+      (;)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: string
+      '3':
+        name: keyword.control.pintora
+
+  - comment: 'action'
+    match: !regex |-
+      (:)
+      (.*)
+      (;)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: string
+      '3':
+        name: keyword.control.pintora
+
+  - comment: 'keyword'
+    match: !regex |-
+      (start|end|stop)\s*$
+    captures:
+      '1':
+        name: keyword.control.pintora
+

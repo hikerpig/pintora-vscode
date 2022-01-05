@@ -1,0 +1,36 @@
+activityDiagram
+  start
+  partition Init {
+    :read config;
+    -> Arrow label;
+    :init internal services;
+    note left: init themes
+  }
+  :Diagram requested;
+  if (diagram registered ?) then
+    :get implementation;
+  else (no)
+    :print error;
+  endif
+
+  switch ( renderer type )
+  case ( svg )
+    :Generate svg;
+  case ( canvas )
+    :Draw canvas;
+  case ( custom )
+    :Custom renderer output;
+  endswitch
+
+  fork
+    :action 1;
+  forkagain
+    :action 2;
+  endfork
+
+  while (data available?) is (available)
+    :read data;
+    :generate diagrams;
+  endwhile (no)
+
+  end

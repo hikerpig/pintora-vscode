@@ -1,0 +1,9 @@
+- comment: Activity Diagram
+  begin: \b(activityDiagram)
+  beginCaptures:
+    '1':
+      name: keyword.control.pintora
+  patterns:
+    - include: '#activity__element'
+
+  end: (^|\G)(?=\s*[`~]{3,}\s*$)
