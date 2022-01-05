@@ -24,9 +24,6 @@
     "languages": [
       {
         "id": "pintora",
-        "aliases": [
-          "pintora"
-        ],
         "extensions": [
           ".pintora"
         ],
