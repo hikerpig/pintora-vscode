@@ -18,5 +18,6 @@ export type ExtensionConfig = {
     light: string
   }
   theme: string
+  renderer: string
   // options: string
 }

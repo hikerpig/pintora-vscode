@@ -50,6 +50,16 @@ Or you can overricde automatic theme detection by setting `pintora.theme`.
 }
 ```
 
+### Renderer
+
+You can specify default renderer in the preview panel for pintora.
+
+```json
+{
+  "pintora.renderer": "Default renderer of pintora, 'svg' or 'canvas'"
+}
+```
+
 ## Credits
 
 Inspired by:

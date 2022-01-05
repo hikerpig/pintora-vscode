@@ -61,6 +61,15 @@
       "./out/markdown-script.js"
     ],
     "markdown.markdownItPlugins": true,
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceLangId == pintora",
+          "command": "pintora.preview-diagram",
+          "group": "navigation"
+        }
+      ]
+    },
     "configuration": {
       "type": "object",
       "title": "Pintora Extension configuration",
@@ -93,6 +102,15 @@
             "null"
           ],
           "description": "One of the themes bundled with pintora"
+        },
+        "pintora.renderer": {
+          "type": "string",
+          "enum": [
+            "svg",
+            "canvas"
+          ],
+          "default": "svg",
+          "description": "Default renderer of pintora, 'svg' or 'canvas'"
         }
       }
     }

@@ -129,6 +129,10 @@ export function activate(context: vscode.ExtensionContext) {
               : extensionConfig.get('vscode.light'))
           )
         },
+        getRenderer() {
+          const extensionConfig = vscode.workspace.getConfiguration('pintora')
+          return extensionConfig.get('renderer')
+        },
       })
     },
   }

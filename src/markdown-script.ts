@@ -26,9 +26,11 @@ function init() {
     out.id = id
     container.innerHTML = ''
     container.appendChild(out)
+    const containerRenderer = container.dataset.renderer as any
 
     pintoraStandalone.renderTo(source, {
       container: out,
+      renderer: containerRenderer || 'svg',
       onError(error) {
         console.error(error)
         out.innerHTML = `<pre style="color: var(--vscode-errorForeground)">${error.message}</pre>`

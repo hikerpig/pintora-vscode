@@ -3,6 +3,7 @@ import * as MarkdownIt from 'markdown-it'
 
 type Options = {
   getTheme?: () => string
+  getRenderer?: () => string
 }
 
 export const MarkdownItPintora = (md: MarkdownIt, options: Options = {}) => {
@@ -21,6 +22,7 @@ export const MarkdownItPintora = (md: MarkdownIt, options: Options = {}) => {
     render: (tokens, idx) => {
       const token = tokens[idx]
       const theme = options.getTheme()
+      const renderer = options.getRenderer()
 
       var src = ''
       if (token.type === ttContainerOpen) {
@@ -42,7 +44,7 @@ export const MarkdownItPintora = (md: MarkdownIt, options: Options = {}) => {
       }
 
       if (token.nesting === 1) {
-        return `<div class="${pluginKeyword}" data-theme="${theme}">${preProcess(
+        return `<div class="${pluginKeyword}" data-theme="${theme}" data-renderer="${renderer}">${preProcess(
           src
         )}`
       } else {
@@ -55,7 +57,8 @@ export const MarkdownItPintora = (md: MarkdownIt, options: Options = {}) => {
   md.options.highlight = (code, lang) => {
     if (lang && lang.match(/\bpintora\b/i)) {
       const theme = options.getTheme()
-      return `<pre style="all:unset;"><div class="${pluginKeyword}" data-theme="${theme}">${preProcess(
+      const renderer = options.getRenderer()
+      return `<pre style="all:unset;"><div class="${pluginKeyword}" data-theme="${theme}" data-renderer="${renderer}"">${preProcess(
         code
       )}</div></pre>`
     }

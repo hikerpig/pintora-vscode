@@ -25,7 +25,7 @@ function doPreview(text: string) {
 
   pintoraStandalone.renderTo(text, {
     container,
-    renderer: 'svg',
+    renderer: config.renderer as any,
     onError(error) {
       console.error(error)
       container.innerHTML = `<pre class="error">${error.message}</pre>`
