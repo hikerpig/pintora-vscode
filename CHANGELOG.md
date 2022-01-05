@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.1](https://github.com/hikerpig/pintora-vscode/compare/v0.2.0...v0.2.1) (2022-01-05)
+
+
+### Features
+
+* Add navigation menu and renderer config ([90dc270](https://github.com/hikerpig/pintora-vscode/commit/90dc270d8335d351d8a8dbc87fa430dc4787cf57))
+
+
+
 ## [0.2.0](https://github.com/hikerpig/pintora-vscode/compare/v0.1.0...v0.2.0) (2022-01-04)
 
 
