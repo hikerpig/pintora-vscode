@@ -138,7 +138,7 @@
     "yaml-import": "^2.0.0"
   },
   "dependencies": {
-    "@pintora/cli": "^0.1.0-alpha.14",
+    "@pintora/cli": "^0.1.0-alpha.15",
     "markdown-it-container": "^3.0.0"
   }
 }
