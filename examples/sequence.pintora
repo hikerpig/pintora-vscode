@@ -1,5 +1,9 @@
 sequenceDiagram
   autonumber
+  @style {
+    messageFontFamily Consolas
+    dividerTextColor #61afef
+  }
   User->>+Pintora: render this
   activate Pintora
   loop Check input

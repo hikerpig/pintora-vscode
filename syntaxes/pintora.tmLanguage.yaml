@@ -15,4 +15,6 @@ repository:
       - diagrams/
   'component__element': !!import/single repository/component__element.yaml
   'activity__element': !!import/single repository/activity__element.yaml
+  'style__clause': !!import/single repository/style__clause.yaml
+  'style__part': !!import/single repository/style__part.yaml
 scopeName: source.pintora

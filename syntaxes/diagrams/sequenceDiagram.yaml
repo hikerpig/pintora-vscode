@@ -144,4 +144,5 @@
           name: variable
         '3':
           name: keyword.control.pintora
+    - include: '#style__clause'
   end: (^|\G)(?=\s*[`~]{3,}\s*$)

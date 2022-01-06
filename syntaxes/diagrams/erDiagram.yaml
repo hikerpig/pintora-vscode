@@ -41,4 +41,5 @@
               name: support.type.property-name.pintora
             '3':
               name: keyword.pintora
+    - include: '#style__clause'
   end: (^|\G)(?=\s*[`~]{3,}\s*$)

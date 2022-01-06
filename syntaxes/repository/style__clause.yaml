@@ -1,0 +1,29 @@
+patterns:
+  - comment: 'style - oneline'
+    match: !regex |-
+      (@style)\s+
+      ([\w\d_]+)\s+
+      (.*)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: support.type.property-name.pintora
+      '3':
+        name: string.value
+
+  - comment: 'style - block'
+    begin: !regex |-
+      (@style)\s+
+      (\{)
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: punctuation.bracket.open.pintora
+    end: '(\})'
+    endCaptures:
+      '1':
+        name: keyword.control.pintora
+    patterns:
+      - include: '#style__part'
