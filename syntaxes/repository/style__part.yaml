@@ -1,0 +1,10 @@
+patterns:
+  - comment: 'stylepart'
+    match: !regex |-
+      ([^\s]+)\s+
+      (.*)
+    captures:
+      '1':
+        name: support.type.property-name.pintora
+      '2':
+        name: string.value
