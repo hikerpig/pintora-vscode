@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.4.0](https://github.com/hikerpig/pintora-vscode/compare/v0.2.1...v0.4.0) (2022-01-15)
+
+
+### Features
+
+* add command 'pintora.export-diagram' ([f4b2460](https://github.com/hikerpig/pintora-vscode/commit/f4b2460b1bb96c49fa0f08b5d3f0aaadb2d34fee))
+* add styleClause syntax highlight ([810c3db](https://github.com/hikerpig/pintora-vscode/commit/810c3dbfe72c774fab08b1d085b190ca91b16de8))
+* add syntax highlight for activityDiagram ([90aac2e](https://github.com/hikerpig/pintora-vscode/commit/90aac2ebe8d4528774e0e7c1aac1dfcbd4bd80a6))
+
+
+
 # [0.3.0](https://github.com/hikerpig/pintora-vscode/compare/v0.2.1...v0.3.0) (2022-01-06)
 
 
