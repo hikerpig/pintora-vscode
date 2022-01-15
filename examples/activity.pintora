@@ -5,7 +5,7 @@ activityDiagram
     :read config;
     -> Arrow label;
     :init internal services;
-    note left: init themes
+    note left: init themejs
   }
   :Diagram requested;
   if (diagram registered ?) then

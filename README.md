@@ -20,6 +20,14 @@ When editing a `.pintora` file, you can call `pintora:Preview Pintora Diagram` t
 
 ![preview command](https://i.imgur.com/BmbbfwJ.png)
 
+### Export Current Diagram
+
+You can use this command to export for current `.pintora` file.
+
+Currently `svg/png/jpg` output format is supported.
+
+It calls the `@pintora/cli` script under the hood, which requires node.js environment and the [`pintora.nodeExecutable`](#node-executable) being correctly configured.
+
 ## Enhance the builtin markdown preview
 
 You can see pintora diagram in markdown preview by annotating `pintora` for the code fence.
@@ -57,6 +65,16 @@ You can specify default renderer in the preview panel for pintora.
 ```json
 {
   "pintora.renderer": "Default renderer of pintora, 'svg' or 'canvas'"
+}
+```
+
+### Node Excecutable
+
+The path to node.js executable.
+
+```json
+{
+  "pintora.nodeExecutable": "path/to/node, default is 'node'"
 }
 ```
 

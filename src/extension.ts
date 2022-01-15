@@ -1,8 +1,11 @@
 import * as vscode from 'vscode'
 import { PreviewerSendMessage } from './type'
 import { MarkdownItPintora } from './markdown-it/markdown-it-pintora'
+import * as EXPORT_DIAGRAM from './commands/export-diagram'
 
 export function activate(context: vscode.ExtensionContext) {
+  context.subscriptions.push(EXPORT_DIAGRAM.initCommand())
+
   let command = vscode.commands.registerCommand(
     'pintora.preview-diagram',
     () => {
