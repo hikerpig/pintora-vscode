@@ -155,5 +155,8 @@
   "dependencies": {
     "@pintora/cli": "^0.1.0-alpha.17",
     "markdown-it-container": "^3.0.0"
+  },
+  "standard-version": {
+    "preset": "angular"
   }
 }
