@@ -68,7 +68,7 @@ You can specify default renderer in the preview panel for pintora.
 }
 ```
 
-### Node Excecutable
+### Node Executable
 
 The path to node.js executable.
 
