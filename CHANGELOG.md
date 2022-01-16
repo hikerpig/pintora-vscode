@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.1](https://github.com/hikerpig/pintora-vscode/compare/v0.4.0...v0.4.1) (2022-01-16)
+
+
+### Bug Fixes
+
+* @pintora/cli resolve error when exporting ([f0b0454](https://github.com/hikerpig/pintora-vscode/commit/f0b04544faea062fbd2393f17b6b6ef98250917c))
+
+
+
 # [0.4.0](https://github.com/hikerpig/pintora-vscode/compare/v0.2.1...v0.4.0) (2022-01-15)
 
 
