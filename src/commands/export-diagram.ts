@@ -5,45 +5,36 @@ import * as mime from 'mime-types'
 import * as child_process from 'child_process'
 import { getLogChannel } from '../util/log'
 import config from '../config'
+import { EXTENSION_NAME } from '../const'
+import { makeQuickPick } from '../util/quick-pick'
 
 function pickFormat() {
-  return new Promise<string | null>((resolve, reject) => {
-    const quickPick = vscode.window.createQuickPick()
-    let format = 'svg'
-    quickPick.items = [
-      {
-        label: 'svg',
-        picked: true,
-      },
-      {
-        label: 'png',
-      },
-      {
-        label: 'jpg',
-      },
-    ]
-    quickPick.title = 'Output Format'
-    quickPick.onDidChangeSelection(selections => {
-      console.log('selections', selections)
-      const label = selections[0]?.label
-      if (label) format = label
-    })
-    quickPick.onDidAccept(() => {
-      quickPick.dispose()
-      resolve(format)
-    })
-    quickPick.onDidHide(() => {
-      quickPick.dispose()
-      resolve(format)
-    })
-
-    quickPick.show()
-  })
+  const { quickPick, open } = makeQuickPick([
+    {
+      label: 'svg',
+      picked: true,
+    },
+    {
+      label: 'png',
+    },
+    {
+      label: 'jpg',
+    },
+  ])
+  quickPick.title = 'Output Format'
+  return open()
 }
 
 function replaceExtname(input: string, newExt: string) {
   const ext = path.extname(input)
   return input.slice(0, input.length - ext.length) + '.' + newExt.replace(/^\./, '')
+}
+
+function tryRequire(p: string) {
+  try {
+    return require.resolve(p)
+  } catch (error) {
+  }
 }
 
 export function initCommand() {
@@ -69,16 +60,25 @@ export function initCommand() {
       return
     }
 
+    const logChannel = getLogChannel()
+
     const editorUri = activeTextEditor.document.uri
     const name = replaceExtname(path.basename(editorUri.path), format)
 
-    const cliPath = require.resolve(`@pintora/cli/bin/pintora`)
+    let cliPath: string = tryRequire('@pintora/cli/bin/pintora')
+    if (!cliPath) {
+      const extensionPath = vscode.extensions.getExtension(EXTENSION_NAME)?.extensionPath
+      cliPath = path.join(extensionPath, 'node_modules', '@pintora/cli/bin/pintora')
+    }
+    if (!fs.existsSync(cliPath)) {
+      vscode.window.showErrorMessage(`No @pintora/cli exists in ${cliPath}`)
+      return
+    }
+
     const outputFilePath = path.join(path.dirname(editorUri.fsPath), name)
 
     const params = [cliPath, 'render', '-i', editorUri.fsPath, '-o', outputFilePath]
     // console.log('params', params)
-
-    const logChannel = getLogChannel()
 
     const cp = child_process.spawn(nodeExecutable, params, {})
     let outputStr = ''
@@ -99,9 +99,9 @@ export function initCommand() {
         }
       }
       if (!success) {
-          vscode.window.showErrorMessage('Error while exporting diagram, please see output for detailed logs')
-          logChannel.appendLine(outputStr)
-          logChannel.appendLine(stderrStr)
+        vscode.window.showErrorMessage('Error while exporting diagram, please see output for detailed logs')
+        logChannel.appendLine(outputStr)
+        logChannel.appendLine(stderrStr)
       }
     })
   })
