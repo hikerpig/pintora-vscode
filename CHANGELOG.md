@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.2](https://github.com/hikerpig/pintora-vscode/compare/v0.4.1...v0.4.2) (2022-01-17)
+
+
+### Bug Fixes
+
+* replace nodeExecutable to  pintoraExecutable to fix runtime module resolve bug ([936d04e](https://github.com/hikerpig/pintora-vscode/commit/936d04e3a4ee128e1ce87bd99bb0f2a3133b2b44))
+
+
+
 ## [0.4.1](https://github.com/hikerpig/pintora-vscode/compare/v0.4.0...v0.4.1) (2022-01-16)
 
 
