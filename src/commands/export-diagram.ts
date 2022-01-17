@@ -46,9 +46,9 @@ export function initCommand() {
       return
     }
 
-    const nodeExecutable = config.nodeExecutable
-    if (!fs.existsSync(nodeExecutable)) {
-      vscode.window.showErrorMessage(`nodeExecutable is not valid, ${nodeExecutable}`)
+    const pintoraExecutable = config.pintoraExecutable
+    if (!fs.existsSync(pintoraExecutable)) {
+      vscode.window.showErrorMessage(`pintoraExecutable is not valid, ${pintoraExecutable}`)
       return
     }
 
@@ -65,22 +65,23 @@ export function initCommand() {
     const editorUri = activeTextEditor.document.uri
     const name = replaceExtname(path.basename(editorUri.path), format)
 
-    let cliPath: string = tryRequire('@pintora/cli/bin/pintora')
-    if (!cliPath) {
-      const extensionPath = vscode.extensions.getExtension(EXTENSION_NAME)?.extensionPath
-      cliPath = path.join(extensionPath, 'node_modules', '@pintora/cli/bin/pintora')
-    }
-    if (!fs.existsSync(cliPath)) {
-      vscode.window.showErrorMessage(`No @pintora/cli exists in ${cliPath}`)
-      return
-    }
+    // let cliPath: string = tryRequire('@pintora/cli/bin/pintora')
+    // if (!cliPath) {
+    //   const extensionPath = vscode.extensions.getExtension(EXTENSION_NAME)?.extensionPath
+    //   cliPath = path.join(extensionPath, 'node_modules', '@pintora/cli/bin/pintora')
+    // }
+    // if (!fs.existsSync(cliPath)) {
+    //   vscode.window.showErrorMessage(`No @pintora/cli exists in ${cliPath}`)
+    //   return
+    // }
 
     const outputFilePath = path.join(path.dirname(editorUri.fsPath), name)
 
-    const params = [cliPath, 'render', '-i', editorUri.fsPath, '-o', outputFilePath]
+    // const params = [cliPath, 'render', '-i', editorUri.fsPath, '-o', outputFilePath]
+    const params = [pintoraExecutable, 'render', '-i', editorUri.fsPath, '-o', outputFilePath]
     // console.log('params', params)
 
-    const cp = child_process.spawn(nodeExecutable, params, {})
+    const cp = child_process.spawn('node', params, {})
     let outputStr = ''
     let stderrStr = ''
     cp.stdout.on('data', (data: Buffer) => {
@@ -99,7 +100,7 @@ export function initCommand() {
         }
       }
       if (!success) {
-        vscode.window.showErrorMessage('Error while exporting diagram, please see output for detailed logs')
+        vscode.window.showErrorMessage('Error while exporting diagram, please see Pintora in output panel for detailed logs')
         logChannel.appendLine(outputStr)
         logChannel.appendLine(stderrStr)
       }

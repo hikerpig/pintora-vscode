@@ -1,9 +1,9 @@
 import * as vscode from 'vscode'
 
 class Config {
-  get nodeExecutable(): string {
+  get pintoraExecutable(): string {
     const extensionConfig = vscode.workspace.getConfiguration('pintora')
-    return extensionConfig.get('nodeExecutable')
+    return extensionConfig.get('pintoraExecutable')
   }
 }
 

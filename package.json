@@ -116,10 +116,10 @@
           "default": "svg",
           "description": "Default renderer of pintora, 'svg' or 'canvas'"
         },
-        "pintora.nodeExecutable": {
+        "pintora.pintoraExecutable": {
           "type": "string",
           "default": "node",
-          "description": "Path of node executable, for exporting diagram"
+          "description": "Path of @pintora/cli executable, for exporting diagram"
         }
       }
     }

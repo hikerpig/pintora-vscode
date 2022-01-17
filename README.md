@@ -26,7 +26,7 @@ You can use this command to export for current `.pintora` file.
 
 Currently `svg/png/jpg` output format is supported.
 
-It calls the `@pintora/cli` script under the hood, which requires node.js environment and the [`pintora.nodeExecutable`](#node-executable) being correctly configured.
+It calls the `@pintora/cli` script under the hood, which requires node.js environment and the [`pintora.pintoraExecutable`](#pintora-executable) being correctly configured.
 
 ## Enhance the builtin markdown preview
 
@@ -68,14 +68,24 @@ You can specify default renderer in the preview panel for pintora.
 }
 ```
 
-### Node Executable
+### Pintora Executable
 
-The path to node.js executable.
+The path to `pintora` executable.
 
 ```json
 {
-  "pintora.nodeExecutable": "path/to/node, default is 'node'"
+  "pintora.pintoraExecutable": "path/to/@pintora/cli, default is 'pintora'"
 }
+```
+
+It's recommended to install `@pintora/cli` globally.
+
+```sh
+npm i -g @pintora/cli
+which pintora
+
+# my output is /var/folders/6x/xxdpt31d011_36lc7jfl49bc0000gp/T/fnm_multishells/33847_1642398161921/bin/pintora
+# copy the output and paste to the config
 ```
 
 ## Credits
