@@ -148,6 +148,7 @@
     "fs-extra": "^10.0.0",
     "rollup": "^2.62.0",
     "rollup-plugin-import-css": "^3.0.2",
+    "rollup-plugin-natives": "^0.7.5",
     "typescript": "^4.5.4",
     "yaml-import": "^2.0.0"
   },

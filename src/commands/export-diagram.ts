@@ -7,6 +7,7 @@ import { getLogChannel } from '../util/log'
 import config from '../config'
 import { EXTENSION_NAME } from '../const'
 import { makeQuickPick } from '../util/quick-pick'
+import { render } from '@pintora/cli'
 
 function pickFormat() {
   const { quickPick, open } = makeQuickPick([
@@ -64,6 +65,15 @@ export function initCommand() {
 
     const editorUri = activeTextEditor.document.uri
     const name = replaceExtname(path.basename(editorUri.path), format)
+
+    const text = activeTextEditor.document.getText()
+    const renderResult = await render({
+      code: text,
+      mimeType,
+    })
+
+    const isText = format === 'svg'
+    console.log('renderResult', renderResult)
 
     // let cliPath: string = tryRequire('@pintora/cli/bin/pintora')
     // if (!cliPath) {
