@@ -1,7 +1,7 @@
 patterns:
-  - comment: 'style - oneline'
+  - comment: 'config - oneline'
     match: !regex |-
-      (@style)\s+
+      (@config)\s+
       ([\w\d_]+)\s+
       (.*)
     captures:
@@ -12,9 +12,9 @@ patterns:
       '3':
         name: string.value
 
-  - comment: 'style - block'
+  - comment: 'config - block'
     begin: !regex |-
-      (@style)\s+
+      (@config)\s+
       (\{)
     beginCaptures:
       '1':
@@ -26,4 +26,4 @@ patterns:
       '1':
         name: keyword.control.pintora
     patterns:
-      - include: '#style__part'
+      - include: '#config__part'

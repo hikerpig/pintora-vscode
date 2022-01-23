@@ -1,6 +1,6 @@
 ```pintora
 componentDiagram
-  @style labelBackground #fefefe
+  @config labelBackground #fefefe
   package "@pintora/core" {
     () GraphicsIR
     () IRenderer

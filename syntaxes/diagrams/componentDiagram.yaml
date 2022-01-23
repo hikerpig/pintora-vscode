@@ -6,6 +6,6 @@
 
   patterns:
     - include: '#component__element'
-    - include: '#style__clause'
+    - include: '#config__clause'
 
   end: (^|\G)(?=\s*[`~]{3,}\s*$)

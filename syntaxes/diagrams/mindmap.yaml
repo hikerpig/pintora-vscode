@@ -1,0 +1,30 @@
+- comment: Mind Map
+  begin: \b(mindmap)
+  beginCaptures:
+    '1':
+      name: keyword.control.pintora
+  patterns:
+    - comment: 'multiline text'
+      begin: '(:)'
+      beginCaptures:
+        '1':
+          name: keyword.control.pintora
+      end: '(;)'
+      endCaptures:
+        '1':
+          name: keyword.control.pintora
+      patterns:
+        - comment: 'text'
+          match: '([^;]+)'
+          captures:
+            '1':
+              name: string
+    - comment: 'mindmap node'
+      match: !regex |-
+        (\*+|\++|\-+)\s*([^:;]*)
+      captures:
+        '1':
+          name: keyword.control.pintora
+        '2':
+          name: string
+    - include: '#config__clause'

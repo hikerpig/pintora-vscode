@@ -1,5 +1,5 @@
 patterns:
-  - comment: 'stylepart'
+  - comment: 'config part'
     match: !regex |-
       ([^\s]+)\s+
       (.*)
