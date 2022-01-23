@@ -5,6 +5,10 @@ class Config {
     const extensionConfig = vscode.workspace.getConfiguration('pintora')
     return extensionConfig.get('pintoraExecutable')
   }
+  get previewUrl(): string {
+    const extensionConfig = vscode.workspace.getConfiguration('pintora')
+    return extensionConfig.get('previewUrl')
+  }
 }
 
 export default new Config()

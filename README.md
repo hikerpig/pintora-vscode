@@ -10,6 +10,7 @@ A humble helper for managing your diagrams as text.
 - [x] erDiagram
 - [x] activityDiagram
 - [x] componentDiagram
+- [x] mindmap
 
 ## Commands
 
@@ -27,6 +28,11 @@ You can use this command to export for current `.pintora` file.
 Currently `svg/png/jpg` output format is supported.
 
 It calls the `@pintora/cli` script under the hood, which requires node.js environment and the [`pintora.pintoraExecutable`](#pintora-executable) being correctly configured.
+
+### Generate Preview Url
+
+You can genearte preview url for current diagram, this url can be used as img's `src` attribute or in Markdown image.
+
 
 ## Enhance the builtin markdown preview
 
@@ -80,12 +86,22 @@ The path to `pintora` executable.
 
 It's recommended to install `@pintora/cli` globally.
 
+### Preview Url
+
+This can be used to specify preview site url of pintora preview page, default value is `https://pintorajs.vercel.app/demo/preview/`.
+
+```json
+{
+  "pintora.previewUrl": "Url of pintora preview page, can be used to generate preview url"
+}
+```
+
 ```sh
 npm i -g @pintora/cli
 which pintora
 
 # my output is /var/folders/6x/xxdpt31d011_36lc7jfl49bc0000gp/T/fnm_multishells/33847_1642398161921/bin/pintora
-# copy the output and paste to the config
+# copy your output and paste to the config
 ```
 
 ## Credits

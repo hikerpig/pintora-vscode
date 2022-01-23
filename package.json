@@ -59,6 +59,12 @@
         "title": "Export Current Diagram",
         "when": "editorLangId == pintora",
         "category": "pintora"
+      },
+      {
+        "command": "pintora.generate-preview-url",
+        "title": "Generate Preview Url",
+        "when": "editorLangId == pintora",
+        "category": "pintora"
       }
     ],
     "markdown.previewScripts": [
@@ -120,6 +126,11 @@
           "type": "string",
           "default": "node",
           "description": "Path of @pintora/cli executable, for exporting diagram"
+        },
+        "pintora.previewUrl": {
+          "type": "string",
+          "default": "https://pintorajs.vercel.app/demo/preview/",
+          "description": "Url of pintora preview page, can be used to generate preview url"
         }
       }
     }
@@ -153,6 +164,7 @@
   },
   "dependencies": {
     "@pintora/cli": "^0.1.0-alpha.20",
+    "btoa": "^1.2.1",
     "markdown-it-container": "^3.0.0"
   },
   "standard-version": {

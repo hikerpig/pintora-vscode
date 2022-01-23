@@ -7,6 +7,7 @@ import { getLogChannel } from '../util/log'
 import config from '../config'
 import { EXTENSION_NAME } from '../const'
 import { makeQuickPick } from '../util/quick-pick'
+import { replaceExtname } from '../util/paths'
 
 function pickFormat() {
   const { quickPick, open } = makeQuickPick([
@@ -23,11 +24,6 @@ function pickFormat() {
   ])
   quickPick.title = 'Output Format'
   return open()
-}
-
-function replaceExtname(input: string, newExt: string) {
-  const ext = path.extname(input)
-  return input.slice(0, input.length - ext.length) + '.' + newExt.replace(/^\./, '')
 }
 
 function tryRequire(p: string) {
