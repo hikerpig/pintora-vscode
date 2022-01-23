@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.3](https://github.com/hikerpig/pintora-vscode/compare/v0.4.2...v0.4.3) (2022-01-23)
+
+
+### Features
+
+* add support for Mind Map, and change '[@style](https://github.com/style)' directive to '[@config](https://github.com/config)' ([b67ccf9](https://github.com/hikerpig/pintora-vscode/commit/b67ccf9112676be1620e18c3098e38617799bfff))
+
+
+
 ## [0.4.2](https://github.com/hikerpig/pintora-vscode/compare/v0.4.1...v0.4.2) (2022-01-17)
 
 
