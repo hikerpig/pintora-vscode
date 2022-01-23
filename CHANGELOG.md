@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.4](https://github.com/hikerpig/pintora-vscode/compare/v0.4.3...v0.4.4) (2022-01-23)
+
+
+### Features
+
+* Add generate preview url command ([f87c8ed](https://github.com/hikerpig/pintora-vscode/commit/f87c8ed5e2a4813fd024af77ef61cb6f2b8f1855))
+
+
+
 ## [0.4.3](https://github.com/hikerpig/pintora-vscode/compare/v0.4.2...v0.4.3) (2022-01-23)
 
 
