@@ -28,3 +28,5 @@ componentDiagram
   [standalone] --> [@pintora/diagrams] : import
   [standalone] --> renderFn : call with GraphicsIR
 ```
+
+## Other Contents

@@ -3,6 +3,7 @@
   beginCaptures:
     '1':
       name: keyword.control.pintora
+  end: (^|\G)(?=\s*[`~]{3,}\s*$)
   patterns:
     - comment: 'multiline text'
       begin: '(:)'
@@ -21,7 +22,7 @@
               name: string
     - comment: 'mindmap node'
       match: !regex |-
-        (\*+|\++|\-+)\s*([^:;]*)
+        (\*+|\++|\-+)\s*([^:;\n]*)
       captures:
         '1':
           name: keyword.control.pintora
