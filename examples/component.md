@@ -1,32 +1,34 @@
 ```pintora
 componentDiagram
   @config labelBackground #fefefe
-  package "@pintora/core" {
-    () GraphicsIR
-    () IRenderer
-    () IDiagram
-    [Diagram Registry] as registry
+  package "Some Group" {
+    [First Component]
+    HTTP -- [First Component]
+    [Another Component]
   }
-  package "@pintora/diagrams" {
-    [...Multiple Diagrams...] as diagrams
-    [diagrams]
-    [diagrams] --> IDiagram : implements
+
+  node "Other Groups" {
+    [Second Component]
+    FTP -- [Second Component]
+    [First Component] --> FTP
   }
-  package "@pintora/renderer" {
-    () "render()" as renderFn
-    [SVGRender]
-    [CanvasRender]
-    [SVGRender] --> IRenderer : implements
-    [CanvasRender] --> IRenderer : implements
-    IRenderer ..> GraphicsIR : accepts
+
+  cloud "Cloud" {
+    [Example 1]
   }
-  package "@pintora/standalone" {
-    [standalone]
+
+  database "MySql" {
+    folder "This is my folder" {
+      [Folder 3]
+    }
+    frame "Foo" {
+      [Frame 4]
+    }
   }
-  [IDiagram] --> GraphicsIR : generate
-  [standalone] --> registry : register all of @pintora/diagrams
-  [standalone] --> [@pintora/diagrams] : import
-  [standalone] --> renderFn : call with GraphicsIR
+
+  [Another Component] --> [Example 1]
+  [Example 1] --> [Folder 3]
+  [Folder 3] --> [Frame 4]
 ```
 
 ## Other Contents

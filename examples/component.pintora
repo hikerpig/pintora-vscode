@@ -1,5 +1,4 @@
 componentDiagram
-  @config labelBackground #fefefe
   package "@pintora/core" {
     () GraphicsIR
     () IRenderer
@@ -19,11 +18,11 @@ componentDiagram
     [CanvasRender] --> IRenderer : implements
     IRenderer ..> GraphicsIR : accepts
   }
-
   package "@pintora/standalone" {
     [standalone]
   }
   [IDiagram] --> GraphicsIR : generate
   [standalone] --> registry : register all of @pintora/diagrams
-  [standalone] --> [@pintora/diagrams] : import
+  [@pintora/standalone] --> [@pintora/diagrams] : import
   [standalone] --> renderFn : call with GraphicsIR
+  
