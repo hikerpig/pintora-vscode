@@ -1,6 +1,6 @@
 sequenceDiagram
   autonumber
-  @config {
+  @param {
     messageFontFamily Consolas
     dividerTextColor #61afef
   }

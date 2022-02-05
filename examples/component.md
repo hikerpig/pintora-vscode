@@ -1,6 +1,6 @@
 ```pintora
 componentDiagram
-  @config labelBackground #fefefe
+  @param labelBackground #fefefe
   package "Some Group" {
     [First Component]
     HTTP -- [First Component]

@@ -42,4 +42,5 @@
             '3':
               name: keyword.pintora
     - include: '#config__clause'
+    - include: '#comment'
   end: (^|\G)(?=\s*[`~]{3,}\s*$)

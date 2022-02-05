@@ -1,5 +1,6 @@
 erDiagram
-  @config curvedEdge false
+  %% add override param to this render
+  @param curvedEdge false
   CUSTOMER ||--o{ ORDER : places
   ORDER ||--|{ LINE-ITEM : contains
   CUSTOMER }|..|{ DELIVERY-ADDRESS : uses

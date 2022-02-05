@@ -1,0 +1,9 @@
+patterns:
+  - comment: 'comment'
+    match: !regex |-
+      (%%)(.*)
+    captures:
+      '1':
+        name: comment
+      '2':
+        name: comment

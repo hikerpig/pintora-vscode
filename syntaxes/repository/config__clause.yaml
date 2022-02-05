@@ -1,7 +1,7 @@
 patterns:
   - comment: 'config - oneline'
     match: !regex |-
-      (@config)\s+
+      (@param)\s+
       ([\w\d_]+)\s+
       (.*)
     captures:
@@ -14,7 +14,7 @@ patterns:
 
   - comment: 'config - block'
     begin: !regex |-
-      (@config)\s+
+      (@param)\s+
       (\{)
     beginCaptures:
       '1':

@@ -6,5 +6,6 @@
   patterns:
     - include: '#activity__element'
     - include: '#config__clause'
+    - include: '#comment'
 
   end: (^|\G)(?=\s*[`~]{3,}\s*$)

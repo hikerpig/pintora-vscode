@@ -1,6 +1,6 @@
 activityDiagram
   start
-  @config curvedEdge false
+  @param curvedEdge false
   partition Init {
     :read config;
     -> Arrow label;

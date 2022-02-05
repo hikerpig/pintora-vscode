@@ -29,7 +29,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* add support for Mind Map, and change '[@style](https://github.com/style)' directive to '[@config](https://github.com/config)' ([b67ccf9](https://github.com/hikerpig/pintora-vscode/commit/b67ccf9112676be1620e18c3098e38617799bfff))
+* add support for Mind Map, and change '[@style](https://github.com/style)' directive to '[@param](https://github.com/config)' ([b67ccf9](https://github.com/hikerpig/pintora-vscode/commit/b67ccf9112676be1620e18c3098e38617799bfff))
 
 
 

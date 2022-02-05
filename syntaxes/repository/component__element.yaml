@@ -1,4 +1,5 @@
 patterns:
+  - include: '#comment'
   - comment: 'package'
     begin: !regex |-
       (package|node|folder|frame|cloud|database|rectangle|component)\s+"([^"]+)"
