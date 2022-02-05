@@ -17,10 +17,34 @@
           name: keyword.control.pintora
         '3':
           name: string
+    - comment: 'participant with classifier'
+      match: !regex |-
+        \s*(participant)
+        \s+(\[)
+        (\<)
+        ([^>]+)
+        (\>)
+        \s*([^\]]+)
+        (\])
+      captures:
+        '1':
+          name: keyword.control.pintora
+        '2':
+          name: keyword.control.pintora
+        '3':
+          name: keyword.control.pintora
+        '4':
+          name: entity.name.tag
+        '5':
+          name: keyword.control.pintora
+        '6':
+          name: variable
+        '7':
+          name: keyword.control.pintora
     - comment: '(participant)(Actor)(as)?(Label)?'
       match: !regex |-
-        \s*(participant) # participant
-        \s+(["\(\)$&%\^/#.?!*=<>\'\\\w\s]+?) # Actor
+        \s*(participant)# participant
+        \s+(["\(\)$&%\^/#.?!*=<>\'\\\w\s]+?)# Actor
         (?:\s+(as))? # as?
         \s(["\(\)$&%\^/#.,?!*=<>\'\\\w\s]+)? # Label?
       captures:
@@ -32,6 +56,7 @@
           name: keyword.control.pintora
         '4':
           name: string
+
     - comment: '(activate/deactivate)(Actor)'
       match: !regex |-
         \s*((?:de)?activate) # Activate/Deactivate

@@ -4,6 +4,7 @@ sequenceDiagram
     messageFontFamily Consolas
     dividerTextColor #61afef
   }
+  participant [<actor> User]
   User->>+Pintora: render this
   activate Pintora
   loop Check input
