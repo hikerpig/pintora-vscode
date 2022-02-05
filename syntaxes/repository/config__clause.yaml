@@ -1,5 +1,23 @@
 patterns:
-  - comment: 'config - oneline'
+  - comment: '@config'
+    begin: !regex |-
+      (@config)
+      (\()
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: support.type.property-name.pintora
+      '3':
+        name: string.value
+    end: '\)'
+    endCaptures:
+      '1':
+        name: keyword.control.pintora
+    patterns:
+      - include: "source.json"
+
+  - comment: '@param - oneline'
     match: !regex |-
       (@param)\s+
       ([\w\d_]+)\s+
@@ -12,7 +30,7 @@ patterns:
       '3':
         name: string.value
 
-  - comment: 'config - block'
+  - comment: '@param - block'
     begin: !regex |-
       (@param)\s+
       (\{)

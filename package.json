@@ -43,7 +43,8 @@
           "text.html.markdown"
         ],
         "embeddedLanguages": {
-          "meta.embedded.block.pintora": "pintora"
+          "meta.embedded.block.pintora": "pintora",
+          "source.json": "json"
         }
       }
     ],

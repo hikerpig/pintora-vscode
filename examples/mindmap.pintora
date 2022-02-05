@@ -1,4 +1,9 @@
 mindmap
+@config({
+  "mindmap": {
+    "fontFamily": "Menlo"
+  }
+})
 + UML Diagrams
 ++ Behavior Diagrams
 +++ Sequence Diagram
