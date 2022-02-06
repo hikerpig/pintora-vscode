@@ -34,11 +34,14 @@
       {
         "language": "pintora",
         "scopeName": "source.pintora",
-        "path": "./out/pintora.tmLanguage.json"
+        "path": "./out/pintora.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.json": "json"
+        }
       },
       {
-        "scopeName": "source.pintora",
-        "path": "./out/pintora.tmLanguage.json",
+        "scopeName": "markdown.pintora.codeblock",
+        "path": "./out/markdown-pintora.tmLanguage.json",
         "injectTo": [
           "text.html.markdown"
         ],

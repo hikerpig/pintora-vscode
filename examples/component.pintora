@@ -1,8 +1,8 @@
 componentDiagram
   package "@pintora/core" {
     () GraphicsIR
-    () IRenderer
-    () IDiagram
+    () "IRenderer"
+    interface "IDiagram"
     [Diagram Registry] as registry
   }
   package "@pintora/diagrams" {

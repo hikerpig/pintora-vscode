@@ -32,11 +32,11 @@
         '2':
           name: keyword.control.pintora
         '3':
-          name: keyword.control.pintora
+          name: punctuation.definition.tag.begin
         '4':
           name: entity.name.tag
         '5':
-          name: keyword.control.pintora
+          name: punctuation.definition.tag.end
         '6':
           name: variable
         '7':

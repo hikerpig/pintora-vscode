@@ -41,6 +41,46 @@ patterns:
       '2':
         name: variable.pintora
 
+  - comment: 'interface "label"'
+    match: !regex |-
+      (interface|\(\))
+      \s*"(\w+)"
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: string.pintora
+
+  - comment: '[component] --> [component] : message'
+    match: !regex |-
+      (\[)
+      (.*)
+      (\])
+      \s*([-><.]+) # relationline
+      \s*(\[)
+      ([^\s]*)
+      (\])
+      \s*(:)\s*
+      (.*) # message
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: variable.pintora
+      '3':
+        name: keyword.control.pintora
+      '4': # relationline
+        name: keyword.control.pintora
+      '5':
+        name: keyword.control.pintora
+      '6':
+        name: variable.pintora
+      '7':
+        name: keyword.control.pintora
+      '8':
+        name: keyword.control.pintora
+      '9':
+        name: string.pintora
   - comment: '[component] --> aliasname : message'
     match: !regex |-
       (\[)
@@ -65,6 +105,7 @@ patterns:
         name: keyword.control.pintora
       '7':
         name: string.pintora
+
   - comment: 'name --> aliasname : message'
     match: !regex |-
       ([^\s]+)

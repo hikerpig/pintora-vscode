@@ -1,0 +1,11 @@
+---
+scopeName: markdown.pintora.codeblock
+injectionSelector: L:markup.fenced_code.block.markdown
+patterns:
+  - include: '#pintora-code-block'
+repository:
+  pintora-code-block:
+    begin: (?<=[`~])pintora(\s+[^`~]*)?$
+    end: (^|\G)(?=\s*[`~]{3,}\s*$)
+    patterns:
+      - include: 'source.pintora#pintora'
