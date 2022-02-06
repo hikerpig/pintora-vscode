@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.7](https://github.com/hikerpig/pintora-vscode/compare/v0.4.6...v0.4.7) (2022-02-06)
+
+
+### Features
+
+* add syntax highlighting for `[@config](https://github.com/config)` directive ([59334d0](https://github.com/hikerpig/pintora-vscode/commit/59334d047fe3ba3abd5517a75250ede246937d02))
+* add syntax highlighting for comments ([5af8d5a](https://github.com/hikerpig/pintora-vscode/commit/5af8d5a76727e0a5de60f38502715ca8a517cb88))
+* separate markdown-pintora.tmLanguage.yaml from pintora.tmLanguage ([8f4e79e](https://github.com/hikerpig/pintora-vscode/commit/8f4e79e5191e188e4e7d5babf44d2c96b2a6d15b))
+
+
+
 ## [0.4.6](https://github.com/hikerpig/pintora-vscode/compare/v0.4.5...v0.4.6) (2022-02-01)
 
 
