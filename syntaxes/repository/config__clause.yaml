@@ -7,13 +7,11 @@ patterns:
       '1':
         name: keyword.control.pintora
       '2':
-        name: support.type.property-name.pintora
-      '3':
-        name: string.value
-    end: '\)'
+        name: meta.brace.round
+    end: '(\))'
     endCaptures:
       '1':
-        name: keyword.control.pintora
+        name: meta.brace.round
     patterns:
       - include: "source.json"
 
