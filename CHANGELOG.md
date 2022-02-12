@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.8](https://github.com/hikerpig/pintora-vscode/compare/v0.4.7...v0.4.8) (2022-02-12)
+
+
+### Bug Fixes
+
+* upgrade pintora to 0.1.1 to fix trailing spaces bug ([68fd308](https://github.com/hikerpig/pintora-vscode/commit/68fd308534e8341030c0b4ba512e4f64c187d907))
+
+
+
 ## [0.4.7](https://github.com/hikerpig/pintora-vscode/compare/v0.4.6...v0.4.7) (2022-02-06)
 
 
