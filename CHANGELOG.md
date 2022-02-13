@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.9](https://github.com/hikerpig/pintora-vscode/compare/v0.4.8...v0.4.9) (2022-02-13)
+
+
+### Bug Fixes
+
+* should support `\r` as end-of-line char and whitespace char ([c7b6726](https://github.com/hikerpig/pintora-vscode/commit/c7b6726148d34a0357638618976bc131caeb65f7))
+
+
+
 ## [0.4.8](https://github.com/hikerpig/pintora-vscode/compare/v0.4.7...v0.4.8) (2022-02-12)
 
 
