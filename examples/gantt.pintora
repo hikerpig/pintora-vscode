@@ -1,0 +1,21 @@
+gantt
+  @config({
+    "themeConfig": {
+      "theme": "default"
+    }
+  })
+
+  title Gantt example
+
+  excludes weekends
+  dateFormat YYYY-MM-DD
+  axisFormat MM-DD
+
+  markDate 2022-3-17
+
+  "With start and end" : 2022-3-15, 2022-3-16
+  "With start and duration" : 2022-3-15, 2d
+
+  section Relations
+  "With id" : task-1, 2022-3-15, 2d
+  "After another task" : after task-1, 3d

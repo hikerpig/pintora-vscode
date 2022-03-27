@@ -11,6 +11,7 @@ A humble helper for managing your diagrams as text.
 - [x] activityDiagram
 - [x] componentDiagram
 - [x] mindmap
+- [x] gantt
 
 ## Commands
 

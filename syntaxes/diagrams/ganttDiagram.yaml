@@ -1,0 +1,120 @@
+- comment: Gantt Diagram
+  begin: \b(gantt)
+  beginCaptures:
+    '1':
+      name: keyword.control.pintora
+  end: (^|\G)(?=\s*[`~]{3,}\s*$)
+  patterns:
+    - comment: 'attr value'
+      match: !regex |-
+        (title|section|dateFormat|axisFormat|markDate)\s*
+        (.*)
+      captures:
+        '1':
+          name: keyword.control.pintora
+        '2':
+          name: string
+    - comment: 'excludes or includes'
+      match: !regex |-
+        (excludes|includes)\s*
+        (.*)
+      captures:
+        '1':
+          name: keyword.control.pintora
+        '2':
+          name: string
+    - comment: 'Task : id, start, endOrDuration'
+      match: !regex |-
+        (".*")\s*
+        (:)\s*
+        (.*)\s*(,)\s*
+        (.*)\s*(,)\s*
+        (.*)\s*
+      captures:
+        '1':
+          name: string
+        '2':
+          name: keyword.control.pintora
+        '3':
+          name: variable
+        '4':
+          name: keyword.control.pintora
+        '5':
+          name: string
+        '6':
+          name: keyword.control.pintora
+        '7':
+          name: string
+        '8':
+          name: keyword.control.pintora
+    - comment: 'Task : after id, endOrDuration'
+      match: !regex |-
+        (".*")\s*
+        (:)\s*
+        (after)
+        (.*)\s*(,)\s*
+        (.*)\s*
+      captures:
+        '1':
+          name: string
+        '2':
+          name: keyword.control.pintora
+        '3':
+          name: keyword.control.pintora
+        '4':
+          name: variable
+        '5':
+          name: keyword.control.pintora
+        '6':
+          name: string
+    - comment: 'Task : start, endOrDuration'
+      match: !regex |-
+        (".*")\s*
+        (:)\s*
+        (.*)\s*(,)\s*
+        (.*)
+      captures:
+        '1':
+          name: string
+        '2':
+          name: keyword.control.pintora
+        '3':
+          name: string
+        '4':
+          name: keyword.control.pintora
+        '5':
+          name: string
+    - comment: 'Task : after id, endOrDuration'
+      match: !regex |-
+        (".*")\s*
+        (:)\s*
+        (after)
+        (.*)\s*(,)\s*
+        (.*)\s*
+      captures:
+        '1':
+          name: string
+        '2':
+          name: keyword.control.pintora
+        '3':
+          name: entity.name.function.pintora
+        '4':
+          name: variable
+        '5':
+          name: keyword.control.pintora
+        '6':
+          name: string
+    - comment: 'Task : endOrDuration'
+      match: !regex |-
+        (".*")\s*
+        (:)\s*
+        (.*)
+      captures:
+        '1':
+          name: string
+        '2':
+          name: keyword.control.pintora
+        '3':
+          name: string
+    - include: '#config__clause'
+    - include: '#comment'
