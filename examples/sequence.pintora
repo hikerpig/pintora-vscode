@@ -1,4 +1,5 @@
 sequenceDiagram
+  title : Sequence diagram example
   autonumber
   @param {
     messageFontFamily Consolas
@@ -7,7 +8,7 @@ sequenceDiagram
   participant [<actor> User]
   User->>+Pintora: render this
   activate Pintora
-  loop Check input
+  loop #88bbf4 Check input
     Pintora-->>Pintora: Has input changed?
   end
   Pintora-->>User: your figure here
