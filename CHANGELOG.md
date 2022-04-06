@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.5.0](https://github.com/hikerpig/pintora-vscode/compare/v0.4.11...v0.5.0) (2022-04-06)
+
+
+### Bug Fixes
+
+* sequenceDiagram syntax highlight ([aae6ec5](https://github.com/hikerpig/pintora-vscode/commit/aae6ec5329f5ab3737564e242a8bd8cef48f10c8))
+
+
+### Features
+
+* Add gantt diagram support ([f4bf5bc](https://github.com/hikerpig/pintora-vscode/commit/f4bf5bc35022a28df03989100c1a9c11acf302b9))
+
+
+
 ## [0.4.11](https://github.com/hikerpig/pintora-vscode/compare/v0.4.10...v0.4.11) (2022-03-11)
 
 
