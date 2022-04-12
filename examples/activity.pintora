@@ -1,6 +1,6 @@
 activityDiagram
   start
-  @param curvedEdge false
+  @param edgeType polyline
   partition Init {
     :read config;
     -> Arrow label;

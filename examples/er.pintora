@@ -1,10 +1,12 @@
 erDiagram
   %% add override param to this render
-  @param curvedEdge false
+  %% orthogonal edges
+  @param edgeType ortho
+
   CUSTOMER ||--o{ ORDER : places
   ORDER ||--|{ LINE-ITEM : contains
-  CUSTOMER }|..|{ DELIVERY-ADDRESS : uses 
+  CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
   ORDER {
-    int orderNumber PK 
+    int orderNumber PK
     string deliveryAddress
   }

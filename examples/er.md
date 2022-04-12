@@ -4,7 +4,7 @@ Simply add a `pintora` codeblock.
 
 ```pintora
 erDiagram
-  @param curvedEdge false
+  @param edgeType curved
   CUSTOMER ||--o{ ORDER : places
   ORDER ||--|{ LINE-ITEM : contains
   CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
