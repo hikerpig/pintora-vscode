@@ -7,6 +7,9 @@ erDiagram
   ORDER ||--|{ LINE-ITEM : contains
   CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
   ORDER {
-    int orderNumber PK
+    int orderNumber PK "order number as id"
     string deliveryAddress
   }
+
+  CUSTOMER inherit PERSON
+  DELIVERER inherit PERSON

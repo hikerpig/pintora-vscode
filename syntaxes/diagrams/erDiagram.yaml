@@ -31,9 +31,9 @@
         '1':
           name: punctuation.bracket.close.pintora
       patterns:
-        - comment: 'propType propName keyType'
+        - comment: 'propType propName keyType "comment"'
           match: !regex |-
-            (\w+)\s*([^\s]+)\s*(.*)?
+            (\w+)\s*([^\s]+)\s*(\w+)?\s*(".*")?
           captures:
             '1':
               name: entity.name.type.pintora
@@ -41,6 +41,20 @@
               name: support.type.property-name.pintora
             '3':
               name: keyword.pintora
+            '4':
+              name: string.pintora
+    - comment: 'entityName inherit entityName'
+      match: !regex |-
+        (\w+)\s*
+        (inherit)\s*
+        (\w+)
+      captures:
+        '1':
+          name: variable
+        '2':
+          name: keyword.control.pintora
+        '3':
+          name: variable
     - include: '#config__clause'
     - include: '#comment'
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
