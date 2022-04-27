@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.3](https://github.com/hikerpig/pintora-vscode/compare/v0.5.2...v0.5.3) (2022-04-27)
+
+
+### Features
+
+* support enhanced er diagram highlight and preview ([3cb4c1d](https://github.com/hikerpig/pintora-vscode/commit/3cb4c1dde33b2d6051647c1444448eb0c70e44f5))
+
+
+
 ## [0.5.2](https://github.com/hikerpig/pintora-vscode/compare/v0.5.1...v0.5.2) (2022-04-13)
 
 
