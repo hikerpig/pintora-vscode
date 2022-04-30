@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.4](https://github.com/hikerpig/pintora-vscode/compare/v0.5.3...v0.5.4) (2022-04-30)
+
+
+### Features
+
+* support activityDiagram repeat loop ([fce55e7](https://github.com/hikerpig/pintora-vscode/commit/fce55e71a86a12c3102ee8358c1468ab36ed77fc))
+
+
+
 ## [0.5.3](https://github.com/hikerpig/pintora-vscode/compare/v0.5.2...v0.5.3) (2022-04-27)
 
 
