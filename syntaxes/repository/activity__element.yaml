@@ -112,6 +112,57 @@ patterns:
     patterns:
       - include: '#activity__element'
 
+  - comment: 'repeat'
+    begin: !regex |-
+      (repeat)\s+
+      (?: # start group
+      \s+(:)\s+
+      ([^;]+)
+      (;)
+      )?
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string
+      '4':
+        name: keyword.control.pintora
+    end: !regex |-
+      (repeatwhile)\s+
+      (\()
+      ([^)]+)
+      (\))
+      (?:\s+(is)\s*(\()([^)]+)(\)))?
+      (?:\s+(not)\s*(\()([^)]+)(\)))?
+    endCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string
+      '4':
+        name: keyword.control.pintora
+      '5':
+        name: keyword.control.pintora
+      '6':
+        name: keyword.control.pintora
+      '7':
+        name: string
+      '8':
+        name: keyword.control.pintora
+      '9':
+        name: keyword.control.pintora
+      '10':
+        name: keyword.control.pintora
+      '11':
+        name: string
+      '12':
+        name: keyword.control.pintora
+    patterns:
+      - include: '#activity__element'
   - comment: 'switch'
     begin: !regex |-
       (switch)\s+

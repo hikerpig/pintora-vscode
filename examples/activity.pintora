@@ -34,4 +34,7 @@ activityDiagram
     :generate diagrams;
   endwhile (no)
 
+  repeat
+    :generate diagrams;
+  repeatwhile (data available ?) is (yes) not (no)
   end
