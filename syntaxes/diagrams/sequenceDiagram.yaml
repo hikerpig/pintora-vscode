@@ -44,10 +44,10 @@
           name: keyword.control.pintora
     - comment: '(participant)(Actor)(as)?(Label)?'
       match: !regex |-
-        \s*(participant)# participant
-        \s+(["\(\)$&%\^/#.?!*=<>\'\\\w\s]+?)# Actor
-        (?:\s+(as))? # as?
-        \s(["\(\)$&%\^/#.,?!*=<>\'\\\w\s]+)? # Label?
+        (participant)
+        \s+([^ ]+)
+        (?:\s+(as))?
+        (?:\s+(.+))?
       captures:
         '1':
           name: keyword.control.pintora
@@ -116,6 +116,23 @@
           name: keyword.control.pintora
     - comment: '(end)'
       match: \s*(end)
+      captures:
+        '1':
+          name: keyword.control.pintora
+    - comment: 'box'
+      match: !regex |-
+        (box)\s*
+        (#[0-9a-fA-F]{3,})?\s*
+        (".*")? # text
+      captures:
+        '1':
+          name: keyword.control.pintora
+        '2':
+          name: entity.name.tag
+        '3':
+          name: string
+    - comment: '(endbox)'
+      match: \s*(endbox)
       captures:
         '1':
           name: keyword.control.pintora
