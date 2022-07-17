@@ -1,0 +1,141 @@
+patterns:
+  - comment: 'subgraph declaration'
+    begin: !regex |-
+      (subgraph)\s*
+      ([\w\d]+)?\s*
+      (\{)
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: string
+      '3':
+        name: punctuation.bracket.open.pintora
+    end: '(})'
+    endCaptures:
+      '1':
+        name: punctuation.bracket.open.pintora
+    patterns:
+      - include: '#dot__graph'
+
+  - comment: 'edge stmt'
+    begin: !regex |-
+      ("[^"]*"|[\w\d_]+)\s*
+      (?=--|->)\s*
+    beginCaptures:
+      '1':
+        name: variable.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: variable.pintora
+    patterns:
+      - include: '#dot__graph'
+  - comment: 'edge rhs'
+    match: !regex |-
+      (--|->)\s*
+      ("[^"]*"|[\w\d_]+)\s*
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: variable.pintora
+
+  - comment: 'attr stmt'
+    begin: !regex |-
+      (node|edge)\s*
+      (\[)\s*
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: punctuation.bracket.open.pintora
+      '3':
+        name: string
+    end: '(])'
+    patterns:
+      - include: '#dot__graph'
+
+  - comment: 'attr'
+    match: !regex |-
+      (\w+)\s*
+      (=)\s*
+      ("?[^"]+"?)\s*
+    captures:
+      '1':
+        name: support.type.property-name.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string
+
+  - comment: 'node stmt'
+    begin: !regex |-
+      ([\w\d]+)\s*
+      (\[)\s*
+    beginCaptures:
+      '1':
+        name: variable.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: punctuation.bracket.open.pintora
+    end: '(])'
+    patterns:
+      - include: '#dot__graph'
+
+  - comment: 'node with name only'
+    match: !regex |-
+      ("[^"]*"|[\w\d_]+)\s*
+      (;)
+    captures:
+      '1':
+        name: variable.pintora
+      '2':
+        name: keyword.control.pintora
+  - comment: 'node in oneline'
+    match: !regex |-
+      ("[^"]*"|[\w\d_]+)\s*
+      (;)?$
+    captures:
+      '1':
+        name: variable.pintora
+      '2':
+        name: keyword.control.pintora
+
+  - comment: 'slash comment'
+    match: !regex |-
+      (\/\/.*)$
+    captures:
+      '1':
+        name: comment
+
+  # - comment: 'block comment'
+  #   begin: '(\/\*)(?!/)'
+  #   beginCaptures:
+  #     '1':
+  #       name: comment
+  #   end: '(\*\/)'
+  #   endCaptures:
+  #     '1':
+  #       name: comment
+  #   patterns:
+  #     - comment: 'comment text'
+  #       match: '^([\w\d\s\*]*)(?!\*\/)'
+  #       captures:
+  #         '1':
+  #           name: comment
+
+  # TODO: this cannot handle multiline block comment
+  - comment: 'block comment'
+    match: !regex |-
+      (\/\*)
+      ([\s\S]*)?
+      (\*\/)
+    captures:
+      '1':
+        name: comment
+      '2':
+        name: comment
+      '3':
+        name: comment

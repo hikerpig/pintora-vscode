@@ -1,0 +1,27 @@
+- comment: DOT Diagram
+  begin: \b(dotDiagram)
+  beginCaptures:
+    '1':
+      name: keyword.control.pintora
+  end: (^|\G)(?=\s*[`~]{3,}\s*$)
+  patterns:
+    - include: '#config__clause'
+    - include: '#comment'
+    - comment: 'graph declaration'
+      begin: !regex |-
+        (graph|digraph)\s*
+        ([\w\d]+)?\s*
+        (\{)
+      beginCaptures:
+        '1':
+          name: keyword.control.pintora
+        '2':
+          name: string
+        '3':
+          name: punctuation.bracket.open.pintora
+      end: '(})'
+      endCaptures:
+        '1':
+          name: punctuation.bracket.open.pintora
+      patterns:
+        - include: '#dot__graph'
