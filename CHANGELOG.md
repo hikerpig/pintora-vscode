@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.7.0](https://github.com/hikerpig/pintora-vscode/compare/v0.6.0...v0.7.0) (2022-07-17)
+
+
+### Features
+
+* add syntax highlight for dotDiagram ([3c71c72](https://github.com/hikerpig/pintora-vscode/commit/3c71c72bf9cc9a50107c696f6f67f36135a3f7df))
+
+
+
 # [0.6.0](https://github.com/hikerpig/pintora-vscode/compare/v0.5.4...v0.6.0) (2022-05-09)
 
 
