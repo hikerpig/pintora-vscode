@@ -52,22 +52,27 @@ patterns:
         name: punctuation.bracket.open.pintora
       '3':
         name: string
-    end: '(])'
+    end: '(\])'
     patterns:
-      - include: '#dot__graph'
+      - include: '#dot__attrs'
 
-  - comment: 'attr'
+  - include: '#dot__attrs'
+
+  - comment: 'node shorthand'
     match: !regex |-
-      (\w+)\s*
-      (=)\s*
-      ("?[^"]+"?)\s*
+      ([\w\d]+)
+      (\[)
+      ("[^"]*")
+      (\])
     captures:
       '1':
-        name: support.type.property-name.pintora
+        name: variable.pintora
       '2':
         name: keyword.control.pintora
       '3':
         name: string
+      '4':
+        name: keyword.control.pintora
 
   - comment: 'node stmt'
     begin: !regex |-
@@ -80,9 +85,12 @@ patterns:
         name: keyword.control.pintora
       '3':
         name: punctuation.bracket.open.pintora
-    end: '(])'
+    end: '(\])'
+    endCaptures:
+      '1':
+        name: keyword.control.pintora
     patterns:
-      - include: '#dot__graph'
+      - include: '#dot__attrs'
 
   - comment: 'node with name only'
     match: !regex |-
@@ -93,7 +101,7 @@ patterns:
         name: variable.pintora
       '2':
         name: keyword.control.pintora
-  - comment: 'node in oneline'
+  - comment: 'node in one line'
     match: !regex |-
       ("[^"]*"|[\w\d_]+)\s*
       (;)?$

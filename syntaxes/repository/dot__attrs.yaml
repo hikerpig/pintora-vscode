@@ -1,0 +1,14 @@
+patterns:
+  - comment: 'attr=value | attr="value"'
+    match: !regex |-
+      ([\w\d]+)\s*
+      (=)\s*
+      ("[^"]*"|[\w\d_]+)
+    captures:
+      '1':
+        name: support.type.property-name.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string
+

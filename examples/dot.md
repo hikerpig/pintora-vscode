@@ -1,4 +1,8 @@
+
+```pintora
 dotDiagram
+  @param layoutDirection LR
+
   %% pintora style comment
   %% here we declare a directed graph
   digraph G {
@@ -25,3 +29,4 @@ dotDiagram
 
     "quoted/1" -> "quoted/2" -> end;
   }
+```
