@@ -60,7 +60,7 @@ patterns:
 
   - comment: 'node shorthand'
     match: !regex |-
-      ([\w\d]+)
+      ([\w\-\d]+)
       (\[)
       ("[^"]*")
       (\])
@@ -76,7 +76,7 @@ patterns:
 
   - comment: 'node stmt'
     begin: !regex |-
-      ([\w\d]+)\s*
+      ([\w\-\d]+)\s*
       (\[)\s*
     beginCaptures:
       '1':
@@ -94,7 +94,7 @@ patterns:
 
   - comment: 'node with name only'
     match: !regex |-
-      ("[^"]*"|[\w\d_]+)\s*
+      ("[^"]*"|[\w\-\d_]+)\s*
       (;)
     captures:
       '1':
