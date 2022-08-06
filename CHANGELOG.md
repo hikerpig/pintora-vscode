@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.1](https://github.com/hikerpig/pintora-vscode/compare/v0.7.0...v0.7.1) (2022-08-06)
+
+
+### Bug Fixes
+
+* optimize dotDiagram syntax ([58199f9](https://github.com/hikerpig/pintora-vscode/commit/58199f93fe8f9c0ac57db1e0653cd1bb973aac78))
+
+
+### Features
+
+* upgrade to pintora 0.6.0 ([d31460d](https://github.com/hikerpig/pintora-vscode/commit/d31460d131c017e5b23afafd4b3c1ea505e2e895))
+
+
+
 # [0.7.0](https://github.com/hikerpig/pintora-vscode/compare/v0.6.0...v0.7.0) (2022-07-17)
 
 
