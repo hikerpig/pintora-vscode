@@ -11,7 +11,7 @@
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "args": ["--extensionDevelopmentPath=${workspaceFolder}", "${workspaceFolder}/examples"],
-      "preLaunchTask": "npm: convert-yaml"
+      "preLaunchTask": "npm: build"
     }
   ]
 }
