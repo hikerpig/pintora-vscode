@@ -1,79 +1,46 @@
-/**
- * This script runs in VSCode markdown builtin preview webview
- */
+
 import { pintoraStandalone } from '@pintora/standalone'
 
 let hasThemeBeSet = false
+const openedErrors = {}
 
-function formatError(error){
-  return `
-    <div>
-      <style>
-        .mainErrorCollapse {
-          margin-bottom: 1.2rem 0;
-        }
-        input[type='checkbox'] {
-          display: none;
-        }
-        .lbl-toggle {
-          display: block;
-          font-weight: bold;
-          font-family: monospace;
-          font-size: 1.2rem;
-          padding: 1rem;
-          color: #ff4c4c;
-          cursor: pointer;
-          border-radius: 7px;
-          transition: all 0.25s ease-out;
-          background: #f553;
-        }
-        .errorCollapse-content {
-          max-height: 0px;
-          overflow-x: hidden;
-          overflow-y: auto;
-          transition: max-height .25s ease-in-out;
-        }
-        .toggle:checked + .lbl-toggle + .errorCollapse-content {
-          max-height: 100vh;
-        }
-        .toggle:checked + .lbl-toggle::before {
-          transform: rotate(90deg) translateX(-3px);
-        }
-        .lbl-toggle::before {
-          content: ' ';
-          display: inline-block;
-        
-          border-top: 5px solid transparent;
-          border-bottom: 5px solid transparent;
-          border-left: 5px solid currentColor;
-          vertical-align: middle;
-          margin-right: .7rem;
-          transform: translateY(-2px);
-        
-          transition: transform .2s ease-out;
-        }
-      </style>
-    </div>
-    <div class="mainErrorCollapse">
-      <input id="errorCollapse" class="toggle" type="checkbox">
-        <label for="errorCollapse" class="lbl-toggle">
-          Syntax error
-        </label>
-      <div class="errorCollapse-content">
-        <div class="content-inner">
-          <pre style="color: var(--vscode-errorForeground)">
-            <span style="color: #ff4c4c">${error.message.trim()}</span>
-          </pre>  
-        </div>
-      </div>
-    </div>
-      `;
-}
+const addCSS = css => (document.head.appendChild(document.createElement('style')).innerHTML = css)
+addCSS(`
+  .pintora-error pre {
+   color: var(--vscode-errorForeground);
+  }
+  .pintora-error pre {
+    display: none;
+  }
+  .pintora-error.open pre {
+   display: block;
+   color: #ff4c4c;
+  }
+  .toggle {
+   margin-top: 0.2em;
+   display: block;
+   font-weight: bold;
+   font-family: monospace;
+   font-size: 1.2rem;
+   padding: 1rem;
+   color: #ff4c4c;
+   cursor: pointer;
+   border-radius: 7px;
+   transition: all 0.25s ease-out;
+   background: #f553;
+  }
+  .pintora-error.open .toggle:after{
+   content: "▾";
+  }
+  .pintora-error .toggle:after{
+   content: "▸"
+  }
+`)
 
 function init() {
   hasThemeBeSet = false
   let i = 0
-  document.querySelectorAll('.pintora').forEach((container: HTMLDivElement) => {
+  document.querySelectorAll('.pintora').forEach((container: HTMLDivElement, key) => {
     const id = `pintora-${Date.now()}-${i++}`
     const source = container.textContent
 
@@ -93,16 +60,40 @@ function init() {
     container.appendChild(out)
     const containerRenderer = container.dataset.renderer as any
 
+    
+
     pintoraStandalone.renderTo(source, {
       container: out,
       renderer: containerRenderer || 'svg',
       onError(error) {
         console.error(error)
-        out.innerHTML = formatError(error)
+        const openError = openedErrors[key] ? 'open' : ''
+        out.innerHTML = `
+          <div class="pintora-error ${openError}" data-key="${key}">
+             <span class="toggle">Syntax Error</span>
+             <pre>${error.message}</pre>
+          </div>
+        `
       },
     })
   })
 }
+
+window.addEventListener('pointerdown', event => {
+  const target = event.target as HTMLElement
+  const parent = target.parentNode as HTMLElement
+  if (!target.classList.contains('toggle')) return
+  if (!parent.classList.contains('pintora-error')) return
+  const key = parent.dataset.key
+
+  if (parent.classList.contains('open')) {
+    parent.classList.remove('open')
+    delete openedErrors[key]
+  } else {
+    parent.classList.add('open')
+    openedErrors[key] = true
+  }
+});
 
 window.addEventListener('vscode.markdown.updateContent', init)
 
