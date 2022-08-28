@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import css from 'rollup-plugin-import-css'
 import json from '@rollup/plugin-json'
+import nodePolyfills from 'rollup-plugin-polyfill-node'
 
 export default [
   {
@@ -14,6 +15,16 @@ export default [
     },
     external: ['vscode'],
     plugins: [nodeResolve(), commonjs(), typescript(), json()],
+  },
+  {
+    input: './src/extension-web.ts',
+    output: {
+      file: './out/extension-web.js',
+      format: 'commonjs',
+      sourcemap: true,
+    },
+    external: ['vscode'],
+    plugins: [nodeResolve(), commonjs(), typescript(), json(), nodePolyfills()],
   },
   {
     input: './src/previewer/index.ts',

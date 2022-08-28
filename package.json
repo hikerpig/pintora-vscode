@@ -61,7 +61,7 @@
       {
         "command": "pintora.export-diagram",
         "title": "Export Current Diagram",
-        "when": "editorLangId == pintora",
+        "when": "editorLangId == pintora && !isWeb",
         "category": "pintora"
       },
       {
@@ -140,6 +140,7 @@
     }
   },
   "main": "out/extension.js",
+  "browser": "out/extension-web.js",
   "activationEvents": [
     "onCommand:pintora.preview-diagram",
     "onLanguage:pintora"
@@ -150,7 +151,8 @@
     "vscode:prepublish": "npm run build",
     "convert-yaml": "node scripts/convert-yaml.js",
     "watch:extension": "rollup -c rollup.config.js -w",
-    "build:extension": "rollup -c rollup.config.js"
+    "build:extension": "rollup -c rollup.config.js",
+    "start-web-extension": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionPath=. ."
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -160,10 +162,14 @@
     "@types/markdown-it": "^12.2.3",
     "@types/mime-types": "^2.1.1",
     "@types/vscode": "^1.59.0",
+    "@vscode/test-web": "^0.0.30",
     "fs-extra": "^10.0.0",
+    "pathe": "^0.3.5",
     "rollup": "^2.62.0",
     "rollup-plugin-import-css": "^3.0.2",
+    "rollup-plugin-polyfill-node": "^0.10.2",
     "typescript": "^4.5.4",
+    "vscode-uri": "^3.0.3",
     "yaml-import": "^2.0.0"
   },
   "dependencies": {

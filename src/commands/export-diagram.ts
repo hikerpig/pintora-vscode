@@ -1,13 +1,12 @@
 import * as vscode from 'vscode'
-import * as path from 'path'
-import * as fs from 'fs'
+import * as pathe from 'pathe'
 import * as mime from 'mime-types'
 import * as child_process from 'child_process'
 import { getLogChannel } from '../util/log'
 import config from '../config'
-import { EXTENSION_NAME } from '../const'
 import { makeQuickPick } from '../util/quick-pick'
 import { replaceExtname } from '../util/paths'
+import { exists } from '../util/fs'
 
 function pickFormat() {
   const { quickPick, open } = makeQuickPick([
@@ -29,8 +28,7 @@ function pickFormat() {
 function tryRequire(p: string) {
   try {
     return require.resolve(p)
-  } catch (error) {
-  }
+  } catch (error) {}
 }
 
 export function initCommand() {
@@ -43,7 +41,10 @@ export function initCommand() {
     }
 
     const pintoraExecutable = config.pintoraExecutable
-    if (!fs.existsSync(pintoraExecutable)) {
+    const executableUri = vscode.Uri.parse(pintoraExecutable)
+    try {
+      await vscode.workspace.fs.stat(executableUri)
+    } catch (error) {
       vscode.window.showErrorMessage(`pintoraExecutable is not valid, ${pintoraExecutable}`)
       return
     }
@@ -59,7 +60,7 @@ export function initCommand() {
     const logChannel = getLogChannel()
 
     const editorUri = activeTextEditor.document.uri
-    const name = replaceExtname(path.basename(editorUri.path), format)
+    const name = replaceExtname(pathe.basename(editorUri.path), format)
 
     // let cliPath: string = tryRequire('@pintora/cli/bin/pintora')
     // if (!cliPath) {
@@ -71,7 +72,7 @@ export function initCommand() {
     //   return
     // }
 
-    const outputFilePath = path.join(path.dirname(editorUri.fsPath), name)
+    const outputFilePath = pathe.join(pathe.dirname(editorUri.fsPath), name)
 
     // const params = [cliPath, 'render', '-i', editorUri.fsPath, '-o', outputFilePath]
     const params = [pintoraExecutable, 'render', '-i', editorUri.fsPath, '-o', outputFilePath]
@@ -86,17 +87,19 @@ export function initCommand() {
     cp.stderr.on('data', (data: Buffer) => {
       stderrStr += data.toString()
     })
-    cp.on('exit', code => {
+    cp.on('exit', async (code) => {
       let success = false
       if (code === 0) {
-        if (fs.existsSync(outputFilePath)) {
+        if (await exists(outputFilePath)) {
           success = true
           vscode.window.showInformationMessage(`Write file to ${outputFilePath}`)
           logChannel.appendLine(outputStr)
         }
       }
       if (!success) {
-        vscode.window.showErrorMessage('Error while exporting diagram, please see Pintora in output panel for detailed logs')
+        vscode.window.showErrorMessage(
+          'Error while exporting diagram, please see Pintora in output panel for detailed logs',
+        )
         logChannel.appendLine(outputStr)
         logChannel.appendLine(stderrStr)
       }

@@ -1,5 +1,4 @@
 import * as vscode from 'vscode'
-import * as path from 'path'
 import { encodeForUrl } from '@pintora/core'
 import config from '../config'
 import { getLogChannel } from '../util/log'
