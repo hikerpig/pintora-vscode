@@ -1,4 +1,6 @@
-
+/**
+ * This script runs in VSCode markdown builtin preview webview
+ */
 import { pintoraStandalone } from '@pintora/standalone'
 
 let hasThemeBeSet = false
@@ -14,7 +16,7 @@ addCSS(`
   }
   .pintora-error.open pre {
    display: block;
-   color: #ff4c4c;
+   color: var(--vscode-errorForeground);
   }
   .toggle {
    margin-top: 0.2em;
