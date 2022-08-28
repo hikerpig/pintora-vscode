@@ -25,11 +25,11 @@ addCSS(`
    font-family: monospace;
    font-size: 1.2rem;
    padding: 1rem;
-   color: #ff4c4c;
+   color: var(--vscode-errorForeground);
    cursor: pointer;
    border-radius: 7px;
    transition: all 0.25s ease-out;
-   background: #f553;
+   background: var(--vscode-inputValidation-errorBackground);
   }
   .pintora-error.open .toggle:after{
    content: "▾";
