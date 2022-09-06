@@ -87,7 +87,7 @@ export function initCommand() {
     cp.stderr.on('data', (data: Buffer) => {
       stderrStr += data.toString()
     })
-    cp.on('exit', async (code) => {
+    cp.on('exit', async code => {
       let success = false
       if (code === 0) {
         if (await exists(outputFilePath)) {

@@ -13,14 +13,10 @@ export function activate(context: vscode.ExtensionContext) {
         getTheme() {
           const extensionConfig = vscode.workspace.getConfiguration('pintora')
           const colorKind = vscode.window.activeColorTheme.kind
-          const isDark =
-            colorKind === vscode.ColorThemeKind.Dark ||
-            colorKind === vscode.ColorThemeKind.HighContrast
+          const isDark = colorKind === vscode.ColorThemeKind.Dark || colorKind === vscode.ColorThemeKind.HighContrast
           return (
             extensionConfig.get('theme') ||
-            (isDark
-              ? extensionConfig.get('vscode.dark')
-              : extensionConfig.get('vscode.light'))
+            (isDark ? extensionConfig.get('vscode.dark') : extensionConfig.get('vscode.light'))
           )
         },
         getRenderer() {

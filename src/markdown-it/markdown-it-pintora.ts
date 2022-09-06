@@ -15,7 +15,7 @@ export const MarkdownItPintora = (md: MarkdownIt, options: Options = {}) => {
 
   md.use(mdItContainer, pluginKeyword, {
     anyClass: true,
-    validate: (info) => {
+    validate: info => {
       return info.trim() === pluginKeyword
     },
 
@@ -44,9 +44,7 @@ export const MarkdownItPintora = (md: MarkdownIt, options: Options = {}) => {
       }
 
       if (token.nesting === 1) {
-        return `<div class="${pluginKeyword}" data-theme="${theme}" data-renderer="${renderer}">${preProcess(
-          src
-        )}`
+        return `<div class="${pluginKeyword}" data-theme="${theme}" data-renderer="${renderer}">${preProcess(src)}`
       } else {
         return '</div>'
       }
@@ -59,7 +57,7 @@ export const MarkdownItPintora = (md: MarkdownIt, options: Options = {}) => {
       const theme = options.getTheme()
       const renderer = options.getRenderer()
       return `<pre style="all:unset;"><div class="${pluginKeyword}" data-theme="${theme}" data-renderer="${renderer}"">${preProcess(
-        code
+        code,
       )}</div></pre>`
     }
     return highlight(code, lang, pluginKeyword)
@@ -67,5 +65,4 @@ export const MarkdownItPintora = (md: MarkdownIt, options: Options = {}) => {
   return md
 }
 
-const preProcess = (/** @type {string} */ source) =>
-  source.replace(/\</g, '&lt;').replace(/\>/g, '&gt;')
+const preProcess = (/** @type {string} */ source) => source.replace(/\</g, '&lt;').replace(/\>/g, '&gt;')

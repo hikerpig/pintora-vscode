@@ -62,8 +62,6 @@ function init() {
     container.appendChild(out)
     const containerRenderer = container.dataset.renderer as any
 
-    
-
     pintoraStandalone.renderTo(source, {
       container: out,
       renderer: containerRenderer || 'svg',
@@ -95,7 +93,7 @@ window.addEventListener('pointerdown', event => {
     parent.classList.add('open')
     openedErrors[key] = true
   }
-});
+})
 
 window.addEventListener('vscode.markdown.updateContent', init)
 

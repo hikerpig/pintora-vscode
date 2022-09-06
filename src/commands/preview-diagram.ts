@@ -15,7 +15,6 @@ export function initCommand(context: vscode.ExtensionContext) {
     const getWebviewContent = () => {
       const config = vscode.workspace.getConfiguration('pintora')
 
-
       const jsUri = panel.webview.asWebviewUri(vscode.Uri.joinPath(context.extensionUri, 'out/previewer/index.js'))
       const cssUri = panel.webview.asWebviewUri(vscode.Uri.joinPath(context.extensionUri, 'out/previewer/bundled.css'))
       return `
