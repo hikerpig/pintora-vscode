@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.8.0](https://github.com/hikerpig/pintora-vscode/compare/v0.7.1...v0.8.0) (2022-09-06)
+
+
+### Features
+
+* support web vscode ([eb89a0f](https://github.com/hikerpig/pintora-vscode/commit/eb89a0f43df181a2ea07a1355dad421864bc7c8f))
+* Format errors ([#6](https://github.com/hikerpig/pintora-vscode/pull/6))
+
+
+
 ## [0.7.1](https://github.com/hikerpig/pintora-vscode/compare/v0.7.0...v0.7.1) (2022-08-06)
 
 
