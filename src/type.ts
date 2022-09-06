@@ -3,7 +3,7 @@ export type PreviewerSendMessage = {
 }
 
 export type WebviewSendMessage = {
-  command: 'preview',
+  command: 'preview'
   data: {
     text: string
   }

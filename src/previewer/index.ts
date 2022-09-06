@@ -34,7 +34,7 @@ function doPreview(text: string) {
 }
 
 // -------- start
-window.addEventListener('message', (event) => {
+window.addEventListener('message', event => {
   const message: WebviewSendMessage = event.data
   // console.log('webview on message')
   switch (message.command) {

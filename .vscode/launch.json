@@ -12,6 +12,14 @@
       "cwd": "${workspaceFolder}",
       "args": ["--extensionDevelopmentPath=${workspaceFolder}", "${workspaceFolder}/examples"],
       "preLaunchTask": "npm: build"
+    },
+    {
+      "name": "Web Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "args": ["--extensionDevelopmentKind=web", "--extensionDevelopmentPath=${workspaceFolder}", "${workspaceFolder}/examples"],
+      "preLaunchTask": "npm: build"
     }
   ]
 }
