@@ -4,6 +4,7 @@
     '1':
       name: keyword.control.pintora
   patterns:
+    - include: '#common__title'
     - comment: 'entityName relSpec entityName: role'
       match: !regex |-
         (\w+)\s*([^\s]+)\s*(.*)\s*(:)\s*(.*)

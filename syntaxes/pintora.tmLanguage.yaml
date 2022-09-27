@@ -14,3 +14,4 @@ repository:
   'comment': !!import/single repository/comment.yaml
   'dot__graph': !!import/single repository/dot__graph.yaml
   'dot__attrs': !!import/single repository/dot__attrs.yaml
+  'common__title': !!import/single repository/common__title.yaml

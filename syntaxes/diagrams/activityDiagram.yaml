@@ -4,6 +4,7 @@
     '1':
       name: keyword.control.pintora
   patterns:
+    - include: '#common__title'
     - include: '#activity__element'
     - include: '#config__clause'
     - include: '#comment'

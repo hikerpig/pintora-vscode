@@ -3,10 +3,10 @@
   beginCaptures:
     '1':
       name: keyword.control.pintora
+  end: (^|\G)(?=\s*[`~]{3,}\s*$)
 
   patterns:
+    - include: '#common__title'
     - include: '#component__element'
     - include: '#config__clause'
     - include: '#comment'
-
-  end: (^|\G)(?=\s*[`~]{3,}\s*$)

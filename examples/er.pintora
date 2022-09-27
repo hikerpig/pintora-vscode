@@ -1,4 +1,5 @@
 erDiagram
+  title: ER Diagram Example
   %% add override param to this render
   %% orthogonal edges
   @param edgeType ortho
