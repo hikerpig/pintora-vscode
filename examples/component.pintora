@@ -1,4 +1,5 @@
 componentDiagram
+  title: Component Diagram Example
   package "@pintora/core" {
     () GraphicsIR
     () "IRenderer"

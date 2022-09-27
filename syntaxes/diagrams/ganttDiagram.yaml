@@ -118,3 +118,4 @@
           name: string
     - include: '#config__clause'
     - include: '#comment'
+    - include: '#common__title'

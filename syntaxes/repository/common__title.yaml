@@ -1,0 +1,13 @@
+patterns:
+  - comment: 'common title statement'
+    match: !regex |-
+      (title)\s*
+      (:)\s*
+      (.*)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: string

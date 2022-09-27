@@ -1,4 +1,5 @@
 activityDiagram
+  title: Activity Diagram Example
   start
   @param edgeType polyline
   partition Init {
