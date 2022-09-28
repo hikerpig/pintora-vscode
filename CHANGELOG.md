@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.1](https://github.com/hikerpig/pintora-vscode/compare/v0.8.0...v0.8.1) (2022-09-28)
+
+
+### Features
+
+* support diagram title syntax ([4396c67](https://github.com/hikerpig/pintora-vscode/commit/4396c670032290c45d502050eb4095153330898a))
+* upgrade to @pintora/cli 0.6.1 ([75e7493](https://github.com/hikerpig/pintora-vscode/commit/75e749320225d9fad32604400928ba6e725a6471))
+
+
+
 # [0.8.0](https://github.com/hikerpig/pintora-vscode/compare/v0.7.1...v0.8.0) (2022-09-06)
 
 
