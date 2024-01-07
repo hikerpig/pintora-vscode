@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.9.0](https://github.com/hikerpig/pintora-vscode/compare/v0.8.2...v0.9.0) (2024-01-07)
+
+
+### Features
+
+* support classDiagram syntax ([8b0f31e](https://github.com/hikerpig/pintora-vscode/commit/8b0f31e690f128636ba4dc9c8bae4eb8fde4d003))
+
+
+
 ## [0.8.2](https://github.com/hikerpig/pintora-vscode/compare/v0.8.1...v0.8.2) (2023-11-22)
 
 
