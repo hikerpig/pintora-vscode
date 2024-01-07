@@ -1,0 +1,127 @@
+patterns:
+
+  - comment: 'class with bracket'
+    begin: !regex |-
+      (class)\s+([^\s]+)
+      \s*({)
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: entity.name.type
+      '3':
+        name: punctuation.bracket.open.pintora
+    end: '^\s*(})'
+    endCaptures:
+      '1':
+        name: punctuation.bracket.close.pintora
+    patterns:
+      - comment: 'class modified member inside bracket'
+        match: !regex |-
+          ({)
+          (.*)
+          (})
+          \s*(.*)
+          \s*(.*)
+        captures:
+          '1':
+            name: keyword.control.pintora
+          '2':
+            name: string
+          '3':
+            name: keyword.control.pintora
+          '4':
+            name: variable.pintora
+          '5':
+            name: variable.pintora
+      - comment: 'class member inside bracket'
+        match: !regex |-
+          ([+#~-])?
+          \s*([\w\d\(\)]+)
+          \s*([\w\d\(\)]+)
+        captures:
+          '1':
+            name: keyword.control.pintora
+          '2':
+            name: entity.name.type
+          '3':
+            name: variable.pintora
+
+      - comment: 'class annotation inside bracket'
+        match: !regex |-
+          (<<)(.*)(>>)
+        captures:
+          '1':
+            name: keyword.control.pintora
+          '2':
+            name: string
+          '3':
+            name: keyword.control.pintora
+
+  - comment: 'class declaration quote alias'
+    match: !regex |-
+      (class)\s*"([^"]+)"\s*(as)\s+(\w+)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: string
+      '3':
+        name: keyword.control.pintora
+      '4':
+        name: entity.name.type
+
+  - comment: 'class declareation name'
+    match: !regex |-
+      (class)\s+(\w+)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: entity.name.type
+  - comment: 'class annotation'
+    match: !regex |-
+      (<<)(.*)(>>)\s*(.*)
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: string
+      '3':
+        name: keyword.control.pintora
+      '4':
+        name: entity.name.type
+  - comment: 'relation statement'
+    match: !regex |-
+      (\w+)\s*
+      ("[^"]*")?\s*
+      (<\|--|<\|\.\.|\*--|\*\.\.|o--|o\.\.|-->|\.\.>|<--|<\.\.|--|\.\.)\s*
+      ("[^"]*")?
+      \s*(\w+)
+      \s*(:)?
+      (.*)?
+    captures:
+      '1':
+        name: entity.name.type
+      '2':
+        name: string
+      '3':
+        name: keyword.control.pintora
+      '4':
+        name: string
+      '5':
+        name: entity.name.type
+      '6':
+        name: keyword.control.pintora
+      '7':
+        name: string
+  - comment: 'class member'
+    match: !regex |-
+      ([\w\d+-]+)\s*(:)\s*(.*)
+    captures:
+      '1':
+        name: variable.pintora
+      '2':
+        name: keyword.control.pintora
+      '3':
+        name: entity.name.type
