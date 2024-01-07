@@ -1,0 +1,22 @@
+classDiagram
+  class "good" as Good
+
+  class Fruit {
+    <<interface>>
+    -float age
+
+    float getAge()
+  }
+
+  <<Real>> Apple
+  softness: Apple
+
+  class Apple {
+    {static} Apple fromString(str)
+  }
+
+  %% There are so many kind of fruits
+  Fruit <|-- Apple
+  Fruit <|.. Banana
+
+  Container "1" *-- "many" Fruit : holds

@@ -1,4 +1,5 @@
 import * as vscode from 'vscode'
+import type { PintoraConfig } from '@pintora/standalone';
 
 class Config {
   get pintoraExecutable(): string {
