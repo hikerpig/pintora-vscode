@@ -2,10 +2,12 @@ import * as vscode from 'vscode'
 import { MarkdownItPintora } from './markdown-it/markdown-it-pintora'
 import * as GENERATE_PREVIEW_URL from './commands/generate-preview-url'
 import * as PREVIEW_DIAGRAM from './commands/preview-diagram'
+import * as EXPORT_DIAGRAM from './commands/export-diagram'
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(GENERATE_PREVIEW_URL.initCommand())
   context.subscriptions.push(PREVIEW_DIAGRAM.initCommand(context))
+  context.subscriptions.push(EXPORT_DIAGRAM.initCommand())
 
   return {
     extendMarkdownIt(md: any) {

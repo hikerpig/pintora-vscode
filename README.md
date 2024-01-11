@@ -13,6 +13,7 @@ A humble helper for managing your diagrams as text.
 - [x] mindmap
 - [x] gantt
 - [x] dotDiagram
+- [x] classDiagram
 
 ## Commands
 
