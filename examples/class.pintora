@@ -16,7 +16,8 @@ classDiagram
   }
 
   %% There are so many kind of fruits
-  Fruit <|-- Apple
-  Fruit <|.. Banana
+  Apple --|> Fruit
+  Fruit <|-- Banana
 
   Container "1" *-- "many" Fruit : holds
+
