@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.1](https://github.com/hikerpig/pintora-vscode/compare/v0.9.0...v0.9.1) (2024-01-14)
+
+
+### Features
+
+* class diagram, add more relations ([ed97602](https://github.com/hikerpig/pintora-vscode/commit/ed97602976733424b839e93d41706994b59bf9b7))
+* register 'export-diagram' command ([1bd53b1](https://github.com/hikerpig/pintora-vscode/commit/1bd53b13776361190c49ef3ea94784be2651eb30))
+
+
+
 # [0.9.0](https://github.com/hikerpig/pintora-vscode/compare/v0.8.2...v0.9.0) (2024-01-07)
 
 
