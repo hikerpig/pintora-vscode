@@ -1,5 +1,5 @@
 mindmap
-title : Mind Map
+title: Mind Map
 @config({
   "mindmap": {
     "fontFamily": "Menlo"
