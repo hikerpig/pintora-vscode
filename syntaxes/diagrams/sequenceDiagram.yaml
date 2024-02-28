@@ -69,7 +69,7 @@
           name: variable
     - comment: '(note)(direction)(Actor)(,)?(Actor)?(:)(Message)'
       match: !regex |-
-        \s*(note|@note) # Note
+        \s*(note|@note|@start_note) # Note
         \s+((?:left|right)\sof|over) # Direction
         \s+(\b["\(\)$&%\^/#.?!*=<>\'\\\w\s]+\b\s*) # Actor
         (,)? # ,?
@@ -93,7 +93,7 @@
           name: string
     - comment: 'Multiline note'
       begin: !regex |-
-        (@note)
+        (@start_note)
         \s+((?:left|right)\sof|over) # Direction
         \s+(\b["\(\)$&%\^/#.?!*=<>\'\\\w\s]+\b\s*) #Actor
         (,)? # ,?
