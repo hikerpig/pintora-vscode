@@ -1,23 +1,17 @@
 sequenceDiagram
-  title : Sequence diagram example
+  title: Sequence Diagram Example
   autonumber
-  @param {
-    messageFontFamily Consolas
-    dividerTextColor #61afef
-  }
-  participant [<actor> User]
-  User->>+Pintora: render this
+  User->>Pintora: render this
   activate Pintora
-  loop #88bbf4 Check input
+  loop Check input
     Pintora-->>Pintora: Has input changed?
   end
   Pintora-->>User: your figure here
   deactivate Pintora
   @note over User,Pintora: note over
   @note right of User: note aside actor
-  @note right of User
+  @start_note right of User
   multiline note
   is possible
   @end_note
-  note over User,Pintora: note over
   == Divider ==
