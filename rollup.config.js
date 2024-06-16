@@ -36,6 +36,7 @@ export default [
     external: ['vscode'],
     plugins: [
       nodeResolve(),
+      commonjs(),
       typescript(),
       css({
         output: 'bundled.css'
