@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.4](https://github.com/hikerpig/pintora-vscode/compare/v0.9.3...v0.9.4) (2024-06-18)
+
+
+### Features
+
+* upgrade to pintora 0.7.5 ([9347803](https://github.com/hikerpig/pintora-vscode/commit/9347803eb2090161bbede3d352073d07214baccc))
+
+
+
 ## [0.9.3](https://github.com/hikerpig/pintora-vscode/compare/v0.9.2...v0.9.3) (2024-02-28)
 
 
