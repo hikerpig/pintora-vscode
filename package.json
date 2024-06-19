@@ -168,7 +168,7 @@
     "rollup": "^2.62.0",
     "rollup-plugin-import-css": "^3.0.2",
     "rollup-plugin-polyfill-node": "^0.10.2",
-    "typescript": "^5.2.2",
+    "typescript": "^5.4.2",
     "vscode-uri": "^3.0.3",
     "yaml-import": "^2.0.0"
   },
