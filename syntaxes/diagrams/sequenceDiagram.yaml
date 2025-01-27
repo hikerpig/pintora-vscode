@@ -7,6 +7,7 @@
   patterns:
     - include: '#config__clause'
     - include: '#comment'
+    - include: '#common__bindClass'
     - comment: '(title)'
       match: !regex |-
         (title)\s*(:)\s+ # title

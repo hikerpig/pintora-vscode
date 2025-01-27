@@ -1,0 +1,68 @@
+patterns:
+  - comment: 'pre block'
+    begin: (@pre)
+    beginCaptures:
+      '1':
+        name: keyword.control.pintora
+    end: (@endpre)
+    endCaptures:
+      '1':
+        name: keyword.control.pintora
+
+    patterns:
+      - comment: 'style'
+        begin: !regex |-
+          (@style)\s*({)
+        beginCaptures:
+          '1':
+            name: keyword.control.pintora
+          '2':
+            name: punctuation.section.property-list.begin.bracket.curly.pintora
+        end: '(})'
+        endCaptures:
+          '1':
+            name: punctuation.section.property-list.end.bracket.curly.pintora
+        patterns:
+          - comment: 'selector'
+            begin: '(?=[\.#][^\s{}]+)'
+            end: '\s*(?={)'
+            name: 'meta.selector.pintora'
+            patterns:
+              - comment: 'class'
+                match: !regex |-
+                  (\.[^\s]+)
+                captures:
+                  '1':
+                    name: entity.other.attribute-name.class.pintora
+              - comment: 'id'
+                match: !regex |-
+                  (#[^\s]+)
+                captures:
+                  '1':
+                    name: entity.other.attribute-name.id.pintora
+          - comment: 'rule list'
+            begin: '{'
+            beginCaptures:
+              '1':
+                name: punctuation.section.property-list.begin.bracket.curly.pintora
+            end: '}'
+            endCaptures:
+              '1':
+                name: punctuation.section.property-list.end.bracket.curly.pintora
+            patterns:
+              - comment: 'property: value'
+                match: !regex |-
+                  ([^\s{}]+)\s*
+                  (:)\s*
+                  (.*)
+                  (;)
+                captures:
+                  '1':
+                    name: support.type.property-name.pintora
+                  '2':
+                    name: keyword.control.pintora
+                  '3':
+                    name: string.value
+                  '4':
+                    name: keyword.control.pintora
+

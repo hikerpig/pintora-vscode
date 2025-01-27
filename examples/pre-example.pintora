@@ -1,0 +1,20 @@
+@pre
+@style {
+  #entity-CUSTOMER {
+    textColor: red;
+  }
+  .people {
+    textColor: blue;
+    fontStyle: italic;
+  }
+}
+@endpre
+
+erDiagram
+  title: Custom Style Example
+  PERSON
+  CUSTOMER inherit PERSON
+  CUSTOMER ||--o{ ORDER : places
+
+  @bindClass entity-CUSTOMER people
+  @bindClass entity-PERSON people
