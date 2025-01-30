@@ -1,0 +1,13 @@
+patterns:
+  - comment: '@bindClass'
+    match: !regex |-
+      (@bindClass)\s+([^\s]+)
+      \s+([^\s]+)
+
+    captures:
+      '1':
+        name: keyword.control.pintora
+      '2':
+        name: string
+      '3':
+        name: string

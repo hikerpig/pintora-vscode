@@ -3,6 +3,7 @@ fileTypes: ['pintora']
 scopeName: source.pintora
 patterns:
   - include: '#pintora'
+  - include: '#common__pre'
 repository:
   pintora:
     patterns: !!import/deep
@@ -16,3 +17,5 @@ repository:
   'dot__attrs': !!import/single repository/dot__attrs.yaml
   'common__title': !!import/single repository/common__title.yaml
   'class__element': !!import/single repository/class__element.yaml
+  'common__pre': !!import/single repository/common__pre.yaml
+  'common__bindClass': !!import/single repository/common__bindClass.yaml

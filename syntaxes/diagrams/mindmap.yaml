@@ -6,6 +6,7 @@
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
   patterns:
     - include: '#common__title'
+    - include: '#common__bindClass'
     - comment: 'multiline text'
       begin: '(:)'
       beginCaptures:

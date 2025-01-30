@@ -119,3 +119,4 @@
     - include: '#config__clause'
     - include: '#comment'
     - include: '#common__title'
+    - include: '#common__bindClass'

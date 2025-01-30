@@ -7,6 +7,7 @@
 
   patterns:
     - include: '#common__title'
+    - include: '#common__bindClass'
     - include: '#component__element'
     - include: '#config__clause'
     - include: '#comment'
