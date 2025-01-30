@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.10.0](https://github.com/hikerpig/pintora-vscode/compare/v0.9.4...v0.10.0) (2025-01-30)
+
+
+### Features
+
+* syntax highlight for `[@pre](https://github.com/pre)` `[@style](https://github.com/style)` `[@bind](https://github.com/bind)Class` ([d733454](https://github.com/hikerpig/pintora-vscode/commit/d733454c87c0273979b4739934504a5ade348937))
+
+
+
 ## [0.9.4](https://github.com/hikerpig/pintora-vscode/compare/v0.9.3...v0.9.4) (2024-06-18)
 
 
