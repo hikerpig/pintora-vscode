@@ -173,8 +173,8 @@
     "yaml-import": "^2.0.0"
   },
   "dependencies": {
-    "@pintora/cli": "0.8.0-alpha.1",
-    "@pintora/standalone": "0.8.0-alpha.1",
+    "@pintora/cli": "^0.8.0",
+    "@pintora/standalone": "^0.8.0",
     "btoa": "^1.2.1",
     "markdown-it-container": "^3.0.0"
   },
