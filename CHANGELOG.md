@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.11.0](https://github.com/hikerpig/pintora-vscode/compare/v0.10.0...v0.11.0) (2025-06-07)
+
+
+### Features
+
+* upgrade @pintora/cli to 0.8.0 ([4adbd36](https://github.com/hikerpig/pintora-vscode/commit/4adbd36ca4fd9bc661854ddb6e769bb5e6e5a278))
+
+
+
 # [0.10.0](https://github.com/hikerpig/pintora-vscode/compare/v0.9.4...v0.10.0) (2025-01-30)
 
 
